@@ -1,0 +1,100 @@
+package BasicFlow;
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+import java.time.Duration;
+
+import org.apache.commons.lang3.RandomStringUtils;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+
+import net.bytebuddy.utility.RandomString;
+import pageobject.signinpage;
+
+
+public class BasicClass {
+	
+	
+	public static WebDriver driver;
+	public signinpage sign;
+	
+	public void InitialiseBrowser(String BrowserName)  {
+		
+		if(BrowserName.equalsIgnoreCase("chrome"))
+		{
+			driver = new ChromeDriver();
+			
+		} else if(BrowserName.equalsIgnoreCase("firefox")) 
+		{
+			driver = new FirefoxDriver();
+			
+		} else if(BrowserName.equalsIgnoreCase("edge"))
+		{
+			 driver = new EdgeDriver();
+		}
+		
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		
+		}
+	
+
+	public void TearDown() 
+	{
+		driver.quit();
+	}
+	
+	public String setRandomCampaignName()
+	   {
+		 String randomstring=RandomStringUtils.random(4,"abcdefghijklmnopqrstuvwxyz");
+		 return "Test campaign"+randomstring;
+	   }
+	   
+	   public String setRandomBusinessName()
+	   {
+		 String randomstring=RandomStringUtils.random(4,"abcdefghijklmnopqrstuvwxyz");
+		 return "Goalcraft"+randomstring;
+	   }
+	   
+	   public String setRandomFirstName()
+	   {
+		 String randomstring=RandomStringUtils.random(3,"abcdefghijklmnopqrstuvwxyz");
+		 return "Anil"+randomstring;
+	   }
+	   
+	   public String setRandomLastName()
+	   {
+		 String randomstring=RandomStringUtils.random(3,"abcdefghijklmnopqrstuvwxyz");
+		 return "Rathod"+randomstring;
+	   }
+	   
+	   public String setRandomEmail()
+	   {
+		 String randomstring=RandomStringUtils.random(3,"abcdefghijklmnopqrstuvwxyz");
+		 return "aniltest"+randomstring+"@gmail.com";
+	   }
+	   public String setRandomMobileNumber()
+	   {
+		  String randomnumeric=RandomStringUtils.randomNumeric(6);
+		  return "9620"+randomnumeric;
+	   }
+	   
+//	   public String setRandomalphanumber()
+//	   {
+//		  String randomalphanumeric=RandomString.randomAlphanumeric(5);
+//		  return randomalphanumeric;
+//	   }
+	  
+	   public void robotClickAction() throws AWTException
+	   {
+			Robot rob=new Robot();
+			rob.keyPress(KeyEvent.VK_ENTER);
+			rob.keyRelease(KeyEvent.VK_ENTER);
+	   }
+}
