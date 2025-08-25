@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="50.235" tests="3" skipped="0" failures="0" errors="0">
+<testcase classname="customer login fuctionality" name="The customer login with valid email address" time="37.458">
+<system-out><![CDATA[
+Given user should navigate to the login page................................passed
+When Enter the url as "https://coalmandi.rokkun.dev/".......................passed
+Then Verify that the customer is navigated to the customer website..........passed
+And Enter the email address as "sandeep@rokkun.io" and password as "Sandeep@1234".passed
+And Clicks on the login button..............................................passed
+Then Verify that the customer is navigated to the dashboard page with the confirmation message.passed
+]]></system-out>
+</testcase>
+<testcase classname="customer login fuctionality" name="The customer login with invalid email address" time="5.934">
+<system-out><![CDATA[
+Given user should navigate to the login page................................passed
+When Enter the url as "https://coalmandi.rokkun.dev/".......................passed
+Then Verify that the customer is navigated to the customer website..........passed
+When user enter the invalid email address as "sandeep@test.com" and valid password as "Sandeep@123".passed
+And Clicks on the login button..............................................passed
+Then Verify the email not registered error message will display.............passed
+]]></system-out>
+</testcase>
+<testcase classname="customer login fuctionality" name="The customer login with invalid password" time="6.481">
+<system-out><![CDATA[
+Given user should navigate to the login page................................passed
+When Enter the url as "https://coalmandi.rokkun.dev/".......................passed
+Then Verify that the customer is navigated to the customer website..........passed
+When user enter the valid email address as "customer@test.com" and invalid password as "1234".passed
+And Clicks on the login button..............................................passed
+Then Verify the invalid password error message will display.................passed
+]]></system-out>
+</testcase>
+</testsuite>

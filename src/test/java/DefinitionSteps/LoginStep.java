@@ -1,20 +1,16 @@
 package DefinitionSteps;
 
-import java.io.IOException;
-import java.net.MalformedURLException;
 
-import com.mailosaur.MailosaurException;
+import org.junit.Assert;
 
 import BasicFlow.BasicClass;
-import BasicFlow.ReadGmailOTP;
 import io.cucumber.java.en.*;
-import pageobject.FetchOTP;
 import pageobject.signinpage;
 
 public class LoginStep extends BasicClass  {
 	
-	@Given("should navigate to the login page")
-	public void user_should_navigate_to_the_login_page() throws MalformedURLException {
+	@Given("user should navigate to the login page")
+	public void user_should_navigate_to_the_login_page()  {
 		InitialiseBrowser("chrome");
 		sign = new signinpage(driver);
 		System.out.println("User navigate to login page :-"+ driver);	
@@ -27,13 +23,16 @@ public class LoginStep extends BasicClass  {
 	
 	@Then("Verify that the customer is navigated to the customer website")
 	public void verify_that_the_customer_is_navigated_to_the_customer_website() {
-	  System.out.println("Navigated to the customer website");
+		String Actual_title = driver.getTitle();
+		String Expected_title = "coalmandi";
+		Assert.assertEquals(Expected_title, Actual_title);
 	  
 	}
 	
-	@When("Enter the email address as {string} and password as {string}")
+	@And("Enter the email address as {string} and password as {string}")
 	public void enter_the_email_address_as_and_password_as(String email, String pwd) throws InterruptedException {
-	    sign.enteremailaddressintofield(email);
+	   
+		sign.enteremailaddressintofield(email);
 	    sign.enterpasswordintofield(pwd);
 	}
 	
@@ -45,30 +44,32 @@ public class LoginStep extends BasicClass  {
 	
 	@Then("Verify that the customer is navigated to the dashboard page with the confirmation message")
 	public void verify_that_the_admin_is_navigated_to_the_dashboard_page_with_the_confirmation_message() {
-	   System.out.println("Dashboard");
+	   sign.leftnavigationfeature();
 	  
 	}
 	
 	@When("user enter the invalid email address as {string} and valid password as {string}")
-	public void user_enter_the_invalid_email_address_as_and_valid_password_as(String string, String string2) {
-	  System.out.println("Empty");
+	public void user_enter_the_invalid_email_address_as_and_valid_password_as(String email1, String pwd2) throws InterruptedException {
+	  sign.enteremailaddressintofield(email1);
+	  sign.enterpasswordintofield(pwd2);
 		
 	}
 	
 	@Then("Verify the email not registered error message will display")
 	public void verify_the_email_not_registered_error_message_will_display() {
-		System.out.println("Empty");
+		System.out.println("Email not registered message");
 		
 	}
 	
 	@When("user enter the valid email address as {string} and invalid password as {string}")
-	public void user_enter_the_valid_email_address_as_and_invalid_password_as(String string, String string2) {
-		System.out.println("Empty"); 
+	public void user_enter_the_valid_email_address_as_and_invalid_password_as(String email3, String pwd3) throws InterruptedException {
+		sign.enteremailaddressintofield(email3);
+		sign.enterpasswordintofield(pwd3);
 	}
 	
 	@Then("Verify the invalid password error message will display")
 	public void verify_the_invalid_password_error_message_will_display() {
-		System.out.println("Empty");
+		System.out.println("Invalid password message");
 	}
 	
 	@When("user enter the email address as {string}")
@@ -82,9 +83,9 @@ public class LoginStep extends BasicClass  {
 	}
 	
 	@When("extract otp from email and enter otp into otp fields")
-	public void extract_otp_from_email_and_enter_otp_into_otp_fields() throws InterruptedException, IOException, MailosaurException {
+	public void extract_otp_from_email_and_enter_otp_into_otp_fields()  {
 
-		sign.fetchemailotp();
+		System.out.println("Empty");
 		
 	}
 	

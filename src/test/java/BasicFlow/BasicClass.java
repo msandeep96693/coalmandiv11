@@ -6,15 +6,14 @@ import java.awt.event.KeyEvent;
 import java.time.Duration;
 
 import org.apache.commons.lang3.RandomStringUtils;
+import org.junit.After;
+import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.edge.EdgeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
 
-import net.bytebuddy.utility.RandomString;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
 import pageobject.signinpage;
 
 
@@ -24,6 +23,7 @@ public class BasicClass {
 	public static WebDriver driver;
 	public signinpage sign;
 	
+	@Before
 	public void InitialiseBrowser(String BrowserName)  {
 		
 		if(BrowserName.equalsIgnoreCase("chrome"))
@@ -45,6 +45,7 @@ public class BasicClass {
 		}
 	
 
+	@After
 	public void TearDown() 
 	{
 		driver.quit();
