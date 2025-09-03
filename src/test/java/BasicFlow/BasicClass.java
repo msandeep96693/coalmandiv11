@@ -23,7 +23,7 @@ public class BasicClass {
 	public static WebDriver driver;
 	public signinpage sign;
 	
-	@Before
+	//@Before
 	public void InitialiseBrowser(String BrowserName)  {
 		
 		if(BrowserName.equalsIgnoreCase("chrome"))
@@ -45,11 +45,11 @@ public class BasicClass {
 		}
 	
 
-	@After
-	public void TearDown() 
-	{
-		driver.quit();
-	}
+	//@After
+//	public void TearDown() 
+//	{
+//		driver.quit();
+//	}
 	
 	public String setRandomCampaignName()
 	   {

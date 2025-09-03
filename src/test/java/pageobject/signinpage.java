@@ -3,6 +3,7 @@ package pageobject;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -30,40 +31,24 @@ public class signinpage extends Basicpage {
 	@FindBy(xpath = "(((//h2[.='Enter OTP'])[2]/../following-sibling::div)[1]/form/div)[1]/div/div/div/div/div/div/input") private List<WebElement> listofOTPnumberfield;
 	
 	@FindBy(xpath = "(//ul[@role='menu'])[1]/li") private List<WebElement> leftnavigationfeaturename;
+	@FindBy(xpath = "//div[@class='ant-notification-notice-with-icon']/div[text()='Login successful']") private WebElement loginconfirmationmessage; 
 	
+//	@FindBy(xpath = "//span[@aria-label='user']") private WebElement clickonprofile;
+	@FindBy(xpath = "//span[@class='font-medium hidden sm:inline']") private WebElement clickonprofile;
 	
-//	public void framer()
-//	{
-//
-//		driver.switchTo().frame(driver.findElement(By.xpath("//iframe")));
-//	}
+	@FindBy(xpath = "//span[.='Logout']") private WebElement clickonlogoutbtn;
 	
 	public void enteremailaddressintofield(String email) throws InterruptedException
 	{
-		try {
-			waitforElement(emailfield);
-			emailfield.sendKeys(email);
-			//driver.findElement(By.xpath("(//input[@type='text'])[1]")).sendKeys(email);
-		} catch (ElementNotInteractableException e) {
-			waitforElement(emailfield);
-			//emailfield.sendKeys(email);
-			driver.findElement(By.xpath("(//input[@type='text'])[1]")).sendKeys(email);
-		}
-		
+			//waitforElement(emailfield);
+			emailfield.sendKeys(email);	
 	}
 	
 	public void enterpasswordintofield(String pwd) throws InterruptedException
 	{
 
-		try {
 			waitforElement(passwordfield);
-			passwordfield.sendKeys(pwd);
-			//driver.findElement(By.xpath("(//label[.='Your password'])[1]/../following-sibling::div/div/div/div/div/span/input")).sendKeys(pwd);
-		} catch (Exception e) {
-			waitforElement(passwordfield);
-			passwordfield.sendKeys(pwd);
-		}
-		
+			passwordfield.sendKeys(pwd);	
 	}
 	
 	public void clickonsignbtn()
@@ -75,17 +60,33 @@ public class signinpage extends Basicpage {
 	{
 		LoginwithOTPbutton.click();
 	}
-	
 
-	public void leftnavigationfeature() 
+	
+	public void clickonprofileicon() 
 	{
-		for(WebElement listoffeature : leftnavigationfeaturename)
-		{
-			String featurename = listoffeature.getText();
-			System.out.println("List of feature name :- "+ featurename);
-		}	
+		try {
+		waitforElement(clickonprofile);
+		clickonprofile.click();	
+		} catch (org.openqa.selenium.ElementClickInterceptedException e) {
+			waitforElement(clickonprofile);
+			driver.findElement(By.xpath("//span[@class='font-medium hidden sm:inline']")).click();
+//			clickonprofile.click();
+		}
+		
 	}
 	
+	public void clickonlogoutbutton()
+	
+	{
+		waitforElement(clickonlogoutbtn);
+		clickonlogoutbtn.click();
+	}
+	
+	public String loginsuccessfulconfirmationmessage()
+	{
+		waitforElement(loginconfirmationmessage);
+		return loginconfirmationmessage.getText();
+	}
 	}
 	
 	

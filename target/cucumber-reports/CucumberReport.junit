@@ -1,33 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="50.235" tests="3" skipped="0" failures="0" errors="0">
-<testcase classname="customer login fuctionality" name="The customer login with valid email address" time="37.458">
+<testsuite name="Cucumber" time="13.31" tests="1" skipped="0" failures="1" errors="0">
+<testcase classname="customer login fuctionality" name="The customer login with valid email address" time="12.75">
+<failure type="java.lang.NullPointerException" message="Cannot invoke &quot;org.openqa.selenium.WebDriver.findElement(org.openqa.selenium.By)&quot; because &quot;this.driver&quot; is null">
+<![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.findElement(org.openqa.selenium.By)" because "this.driver" is null
+	at pageobject.signinpage.clickonprofileicon(signinpage.java:72)
+	at DefinitionSteps.LoginStep.user_click_on_profile_icon(LoginStep.java:103)
+	at ✽.user click on profile icon(file:///C:/Users/User/eclipse-workspace/coalmandiv1/src/test/resources/Loginflow/login.feature:13)
+]]>
+</failure>
 <system-out><![CDATA[
 Given user should navigate to the login page................................passed
 When Enter the url as "https://coalmandi.rokkun.dev/".......................passed
 Then Verify that the customer is navigated to the customer website..........passed
 And Enter the email address as "sandeep@rokkun.io" and password as "Sandeep@1234".passed
-And Clicks on the login button..............................................passed
+And Clicks on the login button..............................................skipped
 Then Verify that the customer is navigated to the dashboard page with the confirmation message.passed
-]]></system-out>
-</testcase>
-<testcase classname="customer login fuctionality" name="The customer login with invalid email address" time="5.934">
-<system-out><![CDATA[
-Given user should navigate to the login page................................passed
-When Enter the url as "https://coalmandi.rokkun.dev/".......................passed
-Then Verify that the customer is navigated to the customer website..........passed
-When user enter the invalid email address as "sandeep@test.com" and valid password as "Sandeep@123".passed
-And Clicks on the login button..............................................passed
-Then Verify the email not registered error message will display.............passed
-]]></system-out>
-</testcase>
-<testcase classname="customer login fuctionality" name="The customer login with invalid password" time="6.481">
-<system-out><![CDATA[
-Given user should navigate to the login page................................passed
-When Enter the url as "https://coalmandi.rokkun.dev/".......................passed
-Then Verify that the customer is navigated to the customer website..........passed
-When user enter the valid email address as "customer@test.com" and invalid password as "1234".passed
-And Clicks on the login button..............................................passed
-Then Verify the invalid password error message will display.................passed
+And user click on profile icon..............................................skipped
+And user click on logout button.............................................skipped
+Then verify the login page is displayed.....................................skipped
+And close the application...................................................skipped
+When user enter the invalid email address as "sandeep@test.com" and valid password as "Sandeep@123".skipped
+Then Verify the email not registered error message will display.............skipped
+When user enter the valid email address as "customer@test.com" and invalid password as "1234".skipped
+Then Verify the invalid password error message will display.................skipped
 ]]></system-out>
 </testcase>
 </testsuite>

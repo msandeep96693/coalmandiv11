@@ -1,10 +1,6 @@
 
 package pageobject;
 
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertNotNull;
-
-import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 import java.util.function.BooleanSupplier;
@@ -15,20 +11,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
-import com.mailosaur.MailosaurClient;
-import com.mailosaur.MailosaurException;
-import com.mailosaur.models.Code;
-import com.mailosaur.models.Message;
-import com.mailosaur.models.MessageSearchParams;
-import com.mailosaur.models.SearchCriteria;
-
 import UTILS.waitHelper;
 
 public class Basicpage 
 {
 	waitHelper wait;
 	WebDriver driver;
-	 static int OTP;
+
 
 	Basicpage(WebDriver driver)
 	{

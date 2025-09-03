@@ -44,8 +44,7 @@ public class LoginStep extends BasicClass  {
 	
 	@Then("Verify that the customer is navigated to the dashboard page with the confirmation message")
 	public void verify_that_the_admin_is_navigated_to_the_dashboard_page_with_the_confirmation_message() {
-	   sign.leftnavigationfeature();
-	  
+		Assert.assertEquals(sign.loginsuccessfulconfirmationmessage(), "Login successful");
 	}
 	
 	@When("user enter the invalid email address as {string} and valid password as {string}")
@@ -97,8 +96,27 @@ public class LoginStep extends BasicClass  {
 	@Then("verify that user redirected to dashboard page")
 	public void verify_that_user_redirected_to_dashboard_page() {
 		System.out.println("Dashboard");
-		 TearDown();
 	}
 	
+	@And("user click on profile icon")
+	public void user_click_on_profile_icon() {
+	   sign.clickonprofileicon();
+	}
+	
+	@And("user click on logout button")
+	public void user_click_on_logout_button() {
+	    sign.clickonlogoutbutton();
+	}
+	
+	@Then("verify the login page is displayed")
+	public void verify_the_login_page_is_displayed() {
+		System.out.println("Verified");
+	    
+	}
+
+	@Then("close the application")
+	public void close_the_application() {
+	    driver.quit();
+	}
 
 }
