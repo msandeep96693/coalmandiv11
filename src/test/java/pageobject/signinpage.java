@@ -1,18 +1,19 @@
 package pageobject;
 
+import java.time.Duration;
 import java.util.List;
 
+import org.jsoup.select.Evaluator.IsEmpty;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class signinpage extends Basicpage {
-	
-	public WebDriver driver;
 	
 	public signinpage(WebDriver driver)
 	{
@@ -22,21 +23,49 @@ public class signinpage extends Basicpage {
 	// Address - xpath 
 	
 	
-	@FindBy(xpath = "(//input[@type='text'])[1]") private WebElement emailfield;
-	@FindBy(xpath = "(//input[@type='password'])[1]") private WebElement passwordfield;
-	@FindBy(xpath = "(//span[text()='Log in'])[1]/..") private WebElement siginbtn;
+	@FindBy(xpath = "(//input[@type='text'])[1]") 
+	private WebElement emailfield;
+	
+	@FindBy(xpath = "(//input[@type='password'])[1]")
+	private WebElement passwordfield;
+	
+	@FindBy(xpath = "(//span[text()='Log in'])[1]/..") 
+	private WebElement siginbtn;
 	
 	
-	@FindBy(xpath = "((//label[.='Your password'])[1]/../../following-sibling::div/button)[2]") private WebElement LoginwithOTPbutton;
-	@FindBy(xpath = "(((//h2[.='Enter OTP'])[2]/../following-sibling::div)[1]/form/div)[1]/div/div/div/div/div/div/input") private List<WebElement> listofOTPnumberfield;
+	@FindBy(xpath = "(//button[@type='button'])[1]") 
+	private WebElement LoginwithOTPbutton;
 	
-	@FindBy(xpath = "(//ul[@role='menu'])[1]/li") private List<WebElement> leftnavigationfeaturename;
-	@FindBy(xpath = "//div[@class='ant-notification-notice-with-icon']/div[text()='Login successful']") private WebElement loginconfirmationmessage; 
+	@FindBy(xpath = "(//button[@type='submit'])[1]")
+	private WebElement verifyloginbtn;
 	
-//	@FindBy(xpath = "//span[@aria-label='user']") private WebElement clickonprofile;
-	@FindBy(xpath = "//span[@class='font-medium hidden sm:inline']") private WebElement clickonprofile;
+	@FindBy(xpath = "(((//h2[.='Enter OTP'])[2]/../following-sibling::div)[1]/form/div)[1]/div/div/div/div/div/div/input") 
+	private List<WebElement> listofOTPnumberfield;
 	
-	@FindBy(xpath = "//span[.='Logout']") private WebElement clickonlogoutbtn;
+	@FindBy(xpath = "(//ul[@role='menu'])[1]/li") 
+	private List<WebElement> leftnavigationfeaturename;
+	
+	@FindBy(xpath = "//div[@class='ant-notification-notice-with-icon']/div[text()='Login successful']") 
+	private WebElement loginconfirmationmessage; 
+	
+	@FindBy(xpath = "//div[@class='ant-notification-notice-message']")
+	private WebElement invalidpasswordresponsemessage;
+	
+	@FindBy(xpath = "//div[@class='ant-notification-notice-message']")
+	private WebElement emailnotregisteredresponsemessage;
+	
+	@FindBy(xpath = "//*[@id='root']/div[2]/div/div/div[3]/form/div[1]/div/div/div/div/div/div/input")
+	private List<WebElement> listofinputfield;
+	
+//	@FindBy(xpath = "//span[@aria-label='user']") 
+//	private WebElement clickonprofile;
+	
+	@FindBy(xpath = "//span[@class='font-medium hidden sm:inline']") 
+	private WebElement clickonprofile;
+	
+	@FindBy(xpath = "//span[.='Logout']")
+	private WebElement clickonlogoutbtn;
+	
 	
 	public void enteremailaddressintofield(String email) throws InterruptedException
 	{
@@ -53,11 +82,15 @@ public class signinpage extends Basicpage {
 	
 	public void clickonsignbtn()
 	{
+		waitforElement(siginbtn);
 		siginbtn.click();
 	}
 	
 	public void clickonloginwithOTPbutton()
 	{
+		scrollUntilElementVisible(LoginwithOTPbutton);
+		
+		waitforElement(LoginwithOTPbutton);
 		LoginwithOTPbutton.click();
 	}
 
@@ -87,6 +120,32 @@ public class signinpage extends Basicpage {
 		waitforElement(loginconfirmationmessage);
 		return loginconfirmationmessage.getText();
 	}
+	
+	public String invalidpasswordconfirmationmessage()
+	{
+		waitforElement(invalidpasswordresponsemessage);
+		return invalidpasswordresponsemessage.getText();
+		
+	}
+	
+	public String Emailnotregisteredconfirmationmessage()
+	{
+		waitforElement(emailnotregisteredresponsemessage);
+		return emailnotregisteredresponsemessage.getText();
+	}
+	
+	public void enterotpintotextfields()
+	{
+		 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(120));
+		 wait.until(d -> listofinputfield.stream().allMatch(field -> !field.getAttribute("value").isEmpty()));
+	}
+	
+//	public void clickonverifyandloginbutton()
+//	{
+//		waitforElement(verifyloginbtn);
+//		verifyloginbtn.click();
+//	}
+	
 	}
 	
 	

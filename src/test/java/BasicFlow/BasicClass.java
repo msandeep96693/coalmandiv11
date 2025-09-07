@@ -14,6 +14,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import pageobject.createaccountpage;
 import pageobject.signinpage;
 
 
@@ -22,8 +23,9 @@ public class BasicClass {
 	
 	public static WebDriver driver;
 	public signinpage sign;
+	public createaccountpage createaccount;
 	
-	//@Before
+	@Before
 	public void InitialiseBrowser(String BrowserName)  {
 		
 		if(BrowserName.equalsIgnoreCase("chrome"))
@@ -45,11 +47,11 @@ public class BasicClass {
 		}
 	
 
-	//@After
-//	public void TearDown() 
-//	{
-//		driver.quit();
-//	}
+	@After
+	public void TearDown() 
+	{
+		driver.quit();
+	}
 	
 	public String setRandomCampaignName()
 	   {

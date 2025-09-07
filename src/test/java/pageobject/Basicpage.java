@@ -56,6 +56,7 @@ public class Basicpage
 	{
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView(true);", element);
+		element.click();
 	}
 	
 	public void scrollBottomofPage()
@@ -76,5 +77,9 @@ public class Basicpage
 		js.executeScript("arguments[0].style.display='block';",element);
 	}
 	
+	public void waituntilinputdataenter()
+	{
+		
+	}
 	
 }

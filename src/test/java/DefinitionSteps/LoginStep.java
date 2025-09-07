@@ -1,7 +1,10 @@
 package DefinitionSteps;
 
 
+import java.awt.AWTException;
+
 import org.junit.Assert;
+import org.openqa.selenium.By;
 
 import BasicFlow.BasicClass;
 import io.cucumber.java.en.*;
@@ -26,8 +29,7 @@ public class LoginStep extends BasicClass  {
 		String Actual_title = driver.getTitle();
 		String Expected_title = "coalmandi";
 		Assert.assertEquals(Expected_title, Actual_title);
-	  
-	}
+	  }
 	
 	@And("Enter the email address as {string} and password as {string}")
 	public void enter_the_email_address_as_and_password_as(String email, String pwd) throws InterruptedException {
@@ -54,9 +56,9 @@ public class LoginStep extends BasicClass  {
 		
 	}
 	
-	@Then("Verify the email not registered error message will display")
-	public void verify_the_email_not_registered_error_message_will_display() {
-		System.out.println("Email not registered message");
+	@Then("Verify the email not registered error message")
+	public void verify_the_email_not_registered_error_message() {
+		Assert.assertEquals(sign.Emailnotregisteredconfirmationmessage(), "Email not registered");
 		
 	}
 	
@@ -66,9 +68,9 @@ public class LoginStep extends BasicClass  {
 		sign.enterpasswordintofield(pwd3);
 	}
 	
-	@Then("Verify the invalid password error message will display")
-	public void verify_the_invalid_password_error_message_will_display() {
-		System.out.println("Invalid password message");
+	@Then("Verify the invalid password error message")
+	public void verify_the_invalid_password_error_message() {
+		Assert.assertEquals(sign.invalidpasswordconfirmationmessage(), "Invalid Password");
 	}
 	
 	@When("user enter the email address as {string}")
@@ -82,21 +84,14 @@ public class LoginStep extends BasicClass  {
 	}
 	
 	@When("extract otp from email and enter otp into otp fields")
-	public void extract_otp_from_email_and_enter_otp_into_otp_fields()  {
-
-		System.out.println("Empty");
-		
-	}
+	public void extract_otp_from_email_and_enter_otp_into_otp_fields() throws AWTException, InterruptedException  {
+		sign.enterotpintotextfields();
+		}
 	
-	@When("user click on Verify & Log in button")
-	public void user_click_on_verify_log_in_button() {
-	    System.out.println("Verified");
-	}
-	
-	@Then("verify that user redirected to dashboard page")
-	public void verify_that_user_redirected_to_dashboard_page() {
-		System.out.println("Dashboard");
-	}
+//	@When("user click on Verify & Log in button")
+//	public void user_click_on_verify_log_in_button() {
+//	    sign.clickonverifyandloginbutton();
+//	}
 	
 	@And("user click on profile icon")
 	public void user_click_on_profile_icon() {
@@ -116,7 +111,7 @@ public class LoginStep extends BasicClass  {
 
 	@Then("close the application")
 	public void close_the_application() {
-	    driver.quit();
+	    TearDown();
 	}
 
 }
