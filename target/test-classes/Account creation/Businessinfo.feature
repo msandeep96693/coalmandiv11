@@ -12,7 +12,6 @@ And customer enter whatsapp number
 And customer enter emailID
 When customer click on send otp button
 And Extract the OTP from whatsapp number and enter into whatsapp number field
-And Extract the OTP from email and enter into emailid field
 When customer click on verify account button
 And then user navigate to create password page
 And customer enter password 

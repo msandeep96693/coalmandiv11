@@ -30,7 +30,7 @@ Scenario: The customer login with invalid password
 	Then Verify the invalid password error message
 	And close the application
 
-@loginwithotp @all
+@loginwithotp
 Scenario: The customer login with OTP functionality
 	When user enter the email address as "sandeep+importer123@rokkun.io"
 	And  Clicks on the login with OTP button

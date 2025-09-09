@@ -77,9 +77,6 @@ public class Basicpage
 		js.executeScript("arguments[0].style.display='block';",element);
 	}
 	
-	public void waituntilinputdataenter()
-	{
-		
-	}
+	
 	
 }

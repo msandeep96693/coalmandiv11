@@ -68,7 +68,7 @@ public class BasicClass {
 	   public String setRandomFirstName()
 	   {
 		 String randomstring=RandomStringUtils.random(3,"abcdefghijklmnopqrstuvwxyz");
-		 return "Anil"+randomstring;
+		 return "Sandeep"+randomstring;
 	   }
 	   
 	   public String setRandomLastName()
@@ -80,7 +80,7 @@ public class BasicClass {
 	   public String setRandomEmail()
 	   {
 		 String randomstring=RandomStringUtils.random(3,"abcdefghijklmnopqrstuvwxyz");
-		 return "aniltest"+randomstring+"@gmail.com";
+		 return "sandeep"+"+"+randomstring+"@rokkun.io";
 	   }
 	   public String setRandomMobileNumber()
 	   {
@@ -100,4 +100,17 @@ public class BasicClass {
 			rob.keyPress(KeyEvent.VK_ENTER);
 			rob.keyRelease(KeyEvent.VK_ENTER);
 	   }
+	   
+	   public void minimizethepagesize() throws AWTException, InterruptedException
+		{
+			Robot rb=new Robot();
+			for(int i = 1; i<=3; i++)
+			{
+				Thread.sleep(1000);
+				rb.keyPress(KeyEvent.VK_CONTROL);
+				rb.keyPress(KeyEvent.VK_MINUS);
+				rb.keyRelease(KeyEvent.VK_CONTROL);
+				rb.keyRelease(KeyEvent.VK_MINUS);
+			} 	
+		}
 }

@@ -1,5 +1,8 @@
 package pageobject;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.time.Duration;
 import java.util.List;
 
@@ -32,7 +35,6 @@ public class signinpage extends Basicpage {
 	@FindBy(xpath = "(//span[text()='Log in'])[1]/..") 
 	private WebElement siginbtn;
 	
-	
 	@FindBy(xpath = "(//button[@type='button'])[1]") 
 	private WebElement LoginwithOTPbutton;
 	
@@ -45,7 +47,7 @@ public class signinpage extends Basicpage {
 	@FindBy(xpath = "(//ul[@role='menu'])[1]/li") 
 	private List<WebElement> leftnavigationfeaturename;
 	
-	@FindBy(xpath = "//div[@class='ant-notification-notice-with-icon']/div[text()='Login successful']") 
+	@FindBy(xpath = "//div[.='Login successful']") 
 	private WebElement loginconfirmationmessage; 
 	
 	@FindBy(xpath = "//div[@class='ant-notification-notice-message']")
@@ -60,7 +62,7 @@ public class signinpage extends Basicpage {
 //	@FindBy(xpath = "//span[@aria-label='user']") 
 //	private WebElement clickonprofile;
 	
-	@FindBy(xpath = "//span[@class='font-medium hidden sm:inline']") 
+	@FindBy(xpath = "(//span[@role='img'])[3]") 
 	private WebElement clickonprofile;
 	
 	@FindBy(xpath = "//span[.='Logout']")
@@ -80,10 +82,11 @@ public class signinpage extends Basicpage {
 			passwordfield.sendKeys(pwd);	
 	}
 	
-	public void clickonsignbtn()
+	public void clickonsignbtn() throws AWTException
 	{
 		waitforElement(siginbtn);
 		siginbtn.click();
+		
 	}
 	
 	public void clickonloginwithOTPbutton()
@@ -95,15 +98,16 @@ public class signinpage extends Basicpage {
 	}
 
 	
-	public void clickonprofileicon() 
+	public void clickonprofileicon() throws InterruptedException 
 	{
+		Thread.sleep(2000);
+		
 		try {
 		waitforElement(clickonprofile);
 		clickonprofile.click();	
 		} catch (org.openqa.selenium.ElementClickInterceptedException e) {
 			waitforElement(clickonprofile);
-			driver.findElement(By.xpath("//span[@class='font-medium hidden sm:inline']")).click();
-//			clickonprofile.click();
+			clickonprofile.click();	
 		}
 		
 	}
