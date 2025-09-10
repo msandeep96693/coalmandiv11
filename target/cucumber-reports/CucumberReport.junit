@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="0.544" tests="1" skipped="0" failures="1" errors="0">
-<testcase classname="Customer business profile creation functionality" name="Business info profile creation" time="0.196">
-<failure/>
+<testsuite name="Cucumber" time="6.608" tests="1" skipped="0" failures="1" errors="0">
+<testcase classname="Customer business profile creation functionality" name="Business info profile creation" time="6.385">
+<failure type="java.lang.NullPointerException" message="Cannot invoke &quot;pageobject.createaccountpage.verifyprofilepreviewpage()&quot; because &quot;this.createaccount&quot; is null">
+<![CDATA[java.lang.NullPointerException: Cannot invoke "pageobject.createaccountpage.verifyprofilepreviewpage()" because "this.createaccount" is null
+	at DefinitionSteps.BusinessaccountcreationStep.profile_profile_view_page_will_display(BusinessaccountcreationStep.java:69)
+	at ✽.Profile profile view page will display(file:///home/active34/Documents/coalmandiv11/src/test/resources/Account%20creation/Businessinfo.feature:9)
+]]>
+</failure>
 <system-out><![CDATA[
 Given user should navigate to the login page................................passed
 When Enter the url as "https://coalmandi.rokkun.dev/".......................passed
 Then Verify that the customer is navigated to the customer website..........passed
-And Enter the email address as "sandeep@rokkun.io" and password as "Sandeep@1234".passed
+And Enter the email address as "sandeep+skg@rokkun.io" and password as "Sandeep@123".passed
 And Clicks on the login button..............................................passed
-And verify Profile review page will display.................................undefined
+And Profile profile view page will display..................................failed
 When customer click on create business profile button.......................skipped
 And customer click on image upload icon.....................................skipped
 And customer enter remember As into textfield...............................skipped
@@ -25,7 +30,7 @@ And customer enter customer person name into textfield......................skip
 And customer enter designation into textfield...............................skipped
 And customer enter Business email into textfield............................skipped
 And customer enter mobile number into textfield.............................skipped
-When customer click on save & Proceed button................................skipped
+When customer click on Proceed button.......................................skipped
 And verify the GST number...................................................skipped
 And customer enter sub unit address into textfield..........................skipped
 When customer click on save button..........................................skipped

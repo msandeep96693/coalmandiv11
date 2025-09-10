@@ -15,10 +15,32 @@ public class Businesscreationpage extends Basicpage {
 	
 	// xpath business profile 
 	
-	@FindBy(xpath="(//button[@type='button'])[2]")WebElement btnCreateBusinessProfile;
+	@FindBy(xpath="(//button[@type='button'])[2]")
+	private WebElement btnCreateBusinessProfile;
 
-	@FindBy(xpath="//input[@type='file']//following-sibling::div")WebElement uploadProfile;
-	@FindBy(xpath="//input[@type='text']")List<WebElement> infoPageTextFields;
+	@FindBy(xpath="//input[@type='file']//following-sibling::div")
+	private WebElement uploadProfile;
 	
+	@FindBy(xpath="(//input[@type='text'])[1]")
+	private WebElement rememberastextField;
+	
+	
+	public void clickoncreatebusinessprofilebutton()
+	{
+		waitforElement(btnCreateBusinessProfile);
+		btnCreateBusinessProfile.click();
+	}
+	
+	public void uploadbusinessprofile()
+	{
+		System.out.println("upload file");
+	}
+	
+	public void businessinfotextfield()
+	{
+		waitforElement(rememberastextField);
+		rememberastextField.sendKeys("Remembersgsagas");
+		
+	}
 	
 }

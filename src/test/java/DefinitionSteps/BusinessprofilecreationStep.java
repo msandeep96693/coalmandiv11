@@ -1,29 +1,28 @@
 package DefinitionSteps;
 
+import BasicFlow.BasicClass;
 import io.cucumber.java.en.*;
+import pageobject.Businesscreationpage;
 
-public class BusinessprofilecreationStep {
+public class BusinessprofilecreationStep extends BasicClass {
 
-	@Then("verify Profile review page will display")
-	public void verify_profile_review_page_will_display() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
+	
 	@When("customer click on create business profile button")
 	public void customer_click_on_create_business_profile_button() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		business = new Businesscreationpage(driver);
+		business.clickoncreatebusinessprofilebutton();
+		
 	}
 	@When("customer click on image upload icon")
 	public void customer_click_on_image_upload_icon() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	   business.uploadbusinessprofile();
 	}
+	
 	@When("customer enter remember As into textfield")
 	public void customer_enter_remember_as_into_textfield() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	    business.businessinfotextfield();
 	}
+	
 	@When("customer enter GST number into textfield")
 	public void customer_enter_gst_number_into_textfield() {
 	    // Write code here that turns the phrase above into concrete actions

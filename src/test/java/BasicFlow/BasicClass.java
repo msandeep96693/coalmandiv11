@@ -14,6 +14,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import pageobject.Businesscreationpage;
 import pageobject.createaccountpage;
 import pageobject.signinpage;
 
@@ -24,6 +25,7 @@ public class BasicClass {
 	public static WebDriver driver;
 	public signinpage sign;
 	public createaccountpage createaccount;
+	public Businesscreationpage business;
 	
 	@Before
 	public void InitialiseBrowser(String BrowserName)  {
