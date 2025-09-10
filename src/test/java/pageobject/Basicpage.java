@@ -56,7 +56,7 @@ public class Basicpage
 	{
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView(true);", element);
-		element.click();
+		//element.click();
 	}
 	
 	public void scrollBottomofPage()

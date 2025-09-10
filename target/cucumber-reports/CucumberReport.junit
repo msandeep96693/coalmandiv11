@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="6.608" tests="1" skipped="0" failures="1" errors="0">
-<testcase classname="Customer business profile creation functionality" name="Business info profile creation" time="6.385">
-<failure type="java.lang.NullPointerException" message="Cannot invoke &quot;pageobject.createaccountpage.verifyprofilepreviewpage()&quot; because &quot;this.createaccount&quot; is null">
-<![CDATA[java.lang.NullPointerException: Cannot invoke "pageobject.createaccountpage.verifyprofilepreviewpage()" because "this.createaccount" is null
-	at DefinitionSteps.BusinessaccountcreationStep.profile_profile_view_page_will_display(BusinessaccountcreationStep.java:69)
-	at ✽.Profile profile view page will display(file:///home/active34/Documents/coalmandiv11/src/test/resources/Account%20creation/Businessinfo.feature:9)
+<testsuite name="Cucumber" time="17.315" tests="1" skipped="0" failures="1" errors="0">
+<testcase classname="Customer business profile creation functionality" name="Business info profile creation" time="16.971">
+<failure type="io.cucumber.java.PendingException" message="TODO: implement me">
+<![CDATA[io.cucumber.java.PendingException: TODO: implement me
+	at DefinitionSteps.BusinessprofilecreationStep.verify_the_gst_number(BusinessprofilecreationStep.java:88)
+	at ✽.verify the GST number(file:///C:/Users/User/eclipse/coalmandiv11/src/test/resources/Account%20creation/Businessinfo.feature:36)
 ]]>
 </failure>
 <system-out><![CDATA[
@@ -13,12 +13,11 @@ When Enter the url as "https://coalmandi.rokkun.dev/".......................pass
 Then Verify that the customer is navigated to the customer website..........passed
 And Enter the email address as "sandeep+skg@rokkun.io" and password as "Sandeep@123".passed
 And Clicks on the login button..............................................passed
-And Profile profile view page will display..................................failed
-When customer click on create business profile button.......................skipped
-And customer click on image upload icon.....................................skipped
-And customer enter remember As into textfield...............................skipped
-And customer enter GST number into textfield................................skipped
-And customer click on verify GST button.....................................skipped
+When customer click on create business profile button.......................passed
+And customer click on image upload icon.....................................passed
+And customer enter remember As into textfield...............................passed
+And customer enter GST number into textfield................................passed
+And customer click on verify GST button.....................................passed
 And customer verify the business name and registered address data...........skipped
 And customer enter city into textfield......................................skipped
 And customer enter state into textfield.....................................skipped
@@ -30,8 +29,8 @@ And customer enter customer person name into textfield......................skip
 And customer enter designation into textfield...............................skipped
 And customer enter Business email into textfield............................skipped
 And customer enter mobile number into textfield.............................skipped
-When customer click on Proceed button.......................................skipped
-And verify the GST number...................................................skipped
+When customer click on Proceed button.......................................passed
+And verify the GST number...................................................pending
 And customer enter sub unit address into textfield..........................skipped
 When customer click on save button..........................................skipped
 And customer upload a authorization letter and click on submit button.......skipped

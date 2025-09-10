@@ -67,6 +67,7 @@ public class BusinessaccountcreationStep extends BasicClass {
 	@And("Profile profile view page will display")
 	public void profile_profile_view_page_will_display() {
 	    Assert.assertEquals(createaccount.verifyprofilepreviewpage(), "Account Created");
+	    
 	}
 	
 	@When("click on logout button")

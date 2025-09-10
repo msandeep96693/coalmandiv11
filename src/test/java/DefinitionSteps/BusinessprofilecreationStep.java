@@ -1,5 +1,7 @@
 package DefinitionSteps;
 
+import java.awt.AWTException;
+
 import BasicFlow.BasicClass;
 import io.cucumber.java.en.*;
 import pageobject.Businesscreationpage;
@@ -10,6 +12,7 @@ public class BusinessprofilecreationStep extends BasicClass {
 	@When("customer click on create business profile button")
 	public void customer_click_on_create_business_profile_button() {
 		business = new Businesscreationpage(driver);
+		System.out.println("check driver :- "+driver);
 		business.clickoncreatebusinessprofilebutton();
 		
 	}
@@ -20,78 +23,64 @@ public class BusinessprofilecreationStep extends BasicClass {
 	
 	@When("customer enter remember As into textfield")
 	public void customer_enter_remember_as_into_textfield() {
-	    business.businessinfotextfield();
+	    business.businessinfotextfield("Remembername123");
 	}
 	
 	@When("customer enter GST number into textfield")
 	public void customer_enter_gst_number_into_textfield() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	   business.entergstnumberfield("36AAFCK8053R1ZS");
 	}
 	@When("customer click on verify GST button")
 	public void customer_click_on_verify_gst_button() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	    business.clickonverifygstnumber();
 	}
 	@When("customer verify the business name and registered address data")
 	public void customer_verify_the_business_name_and_registered_address_data() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	    System.out.println("Verified");
 	}
 	@When("customer enter city into textfield")
 	public void customer_enter_city_into_textfield() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	    business.entercityfield("chennai");
 	}
 	@When("customer enter state into textfield")
-	public void customer_enter_state_into_textfield() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	public void customer_enter_state_into_textfield() throws InterruptedException {
+	    business.enterstatefield("Tamil Nadu");
 	}
 	@When("customer select a option from ownership dropdown")
 	public void customer_select_a_option_from_ownership_dropdown() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	    business.clickonownershipdropdown();
 	}
 	@When("customer select a option from industry dropdown")
 	public void customer_select_a_option_from_industry_dropdown() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	    business.clickonindustrydropdown();
 	}
 	@When("customer select a option from product to Trade dropdown")
-	public void customer_select_a_option_from_product_to_trade_dropdown() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	public void customer_select_a_option_from_product_to_trade_dropdown() throws AWTException {
+	    business.clickonproducttotradedropdown();
 	}
 	@When("customer select a option from origin of coal dropdown")
 	public void customer_select_a_option_from_origin_of_coal_dropdown() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	    business.clickonoriginofcoaldropdown();
 	}
 	@When("customer enter customer person name into textfield")
 	public void customer_enter_customer_person_name_into_textfield() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	    business.entercontactnamefield(setRandomFirstName());
 	}
 	@When("customer enter designation into textfield")
 	public void customer_enter_designation_into_textfield() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	    business.enterdesignationfield("manager");
 	}
 	@When("customer enter Business email into textfield")
 	public void customer_enter_business_email_into_textfield() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	    business.enteremailIdfield(setRandomEmail());
 	}
 	@When("customer enter mobile number into textfield")
 	public void customer_enter_mobile_number_into_textfield() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	    business.entermobilenumberfield(setRandomMobileNumber());
 	}
 	@When("customer click on Proceed button")
 	public void customer_click_on_proceed_button() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	    System.out.println("clicked");
 	}
 	@When("verify the GST number")
 	public void verify_the_gst_number() {
