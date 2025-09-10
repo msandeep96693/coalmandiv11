@@ -1,64 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="91.283" tests="1" skipped="0" failures="1" errors="0">
-<testcase classname="Customer Account Registration functionality" name="customer account Registration" time="91.069">
-<failure type="org.openqa.selenium.ElementClickInterceptedException" message="element click intercepted: Element &lt;button type=&quot;button&quot; class=&quot;ant-btn css-1tbu3z4 ant-btn-primary ant-btn-color-default ant-btn-variant-filled ant-btn-sm rounded-sm h-12 text-xs px-4 false !border !bg-light-blue !w-auto !text-primary&quot;&gt;...&lt;/button&gt; is not clickable at point (1231, 48). Other element would receive the click: &lt;svg fill-rule=&quot;evenodd&quot; viewBox=&quot;64 64 896 896&quot; focusable=&quot;false&quot; data-icon=&quot;close&quot; width=&quot;1em&quot; height=&quot;1em&quot; fill=&quot;currentColor&quot; aria-hidden=&quot;true&quot;&gt;...&lt;/svg&gt;
-  (Session info: chrome=140.0.7339.80)
-Build info: version: '4.27.0', revision: 'd6e718d134'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-79-generic', java.version: '21.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [99fb46eb3a91cbdbfdb880bd5c0e950c, clickElement {id=f.120C2B1DA1F451DAF5DC546F81E7DA6A.d.4FF0E32ACF1BD5E60271D5B2F1AC3258.e.137}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.80, chrome: {chromedriverVersion: 140.0.7339.80 (670b6f192f46..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:34349}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:34349/devtoo..., se:cdpVersion: 140.0.7339.80, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on linux (99fb46eb3a91cbdbfdb880bd5c0e950c)] -&gt; xpath: (//button[@type='button'])[1]]
-Session ID: 99fb46eb3a91cbdbfdb880bd5c0e950c">
-<![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <button type="button" class="ant-btn css-1tbu3z4 ant-btn-primary ant-btn-color-default ant-btn-variant-filled ant-btn-sm rounded-sm h-12 text-xs px-4 false !border !bg-light-blue !w-auto !text-primary">...</button> is not clickable at point (1231, 48). Other element would receive the click: <svg fill-rule="evenodd" viewBox="64 64 896 896" focusable="false" data-icon="close" width="1em" height="1em" fill="currentColor" aria-hidden="true">...</svg>
-  (Session info: chrome=140.0.7339.80)
-Build info: version: '4.27.0', revision: 'd6e718d134'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-79-generic', java.version: '21.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [99fb46eb3a91cbdbfdb880bd5c0e950c, clickElement {id=f.120C2B1DA1F451DAF5DC546F81E7DA6A.d.4FF0E32ACF1BD5E60271D5B2F1AC3258.e.137}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.80, chrome: {chromedriverVersion: 140.0.7339.80 (670b6f192f46..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:34349}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:34349/devtoo..., se:cdpVersion: 140.0.7339.80, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on linux (99fb46eb3a91cbdbfdb880bd5c0e950c)] -> xpath: (//button[@type='button'])[1]]
-Session ID: 99fb46eb3a91cbdbfdb880bd5c0e950c
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at jdk.proxy2/jdk.proxy2.$Proxy23.click(Unknown Source)
-	at pageobject.createaccountpage.clickonlogoutbutton(createaccountpage.java:183)
-	at DefinitionSteps.BusinessaccountcreationStep.click_on_logout_button(BusinessaccountcreationStep.java:75)
-	at ✽.click on logout button(file:///home/active34/Documents/coalmandiv11/src/test/resources/Account%20creation/accountregistration.feature:20)
-]]>
-</failure>
+<testsuite name="Cucumber" time="0.544" tests="1" skipped="0" failures="1" errors="0">
+<testcase classname="Customer business profile creation functionality" name="Business info profile creation" time="0.196">
+<failure/>
 <system-out><![CDATA[
 Given user should navigate to the login page................................passed
 When Enter the url as "https://coalmandi.rokkun.dev/".......................passed
 Then Verify that the customer is navigated to the customer website..........passed
-When customer click on create an account button.............................passed
-And customer should select one subrole......................................passed
-And customer click on continue button.......................................passed
-And customer enter fullname.................................................passed
-And customer enter whatsapp number..........................................passed
-And customer enter emailID..................................................passed
-When customer click on send otp button......................................passed
-And Extract the OTP from whatsapp number and enter into whatsapp number field.passed
-And then user navigate to create password page..............................passed
-And customer enter password.................................................passed
-And customer enter confirm password.........................................passed
-When customer click on create Account button with confirmation message......passed
-And Profile profile view page will display..................................passed
-And click on logout button..................................................failed
-When close the application..................................................skipped
+And Enter the email address as "sandeep@rokkun.io" and password as "Sandeep@1234".passed
+And Clicks on the login button..............................................passed
+And verify Profile review page will display.................................undefined
+When customer click on create business profile button.......................skipped
+And customer click on image upload icon.....................................skipped
+And customer enter remember As into textfield...............................skipped
+And customer enter GST number into textfield................................skipped
+And customer click on verify GST button.....................................skipped
+And customer verify the business name and registered address data...........skipped
+And customer enter city into textfield......................................skipped
+And customer enter state into textfield.....................................skipped
+And customer select a option from ownership dropdown........................skipped
+And customer select a option from industry dropdown.........................skipped
+And customer select a option from product to Trade dropdown.................skipped
+And customer select a option from origin of coal dropdown...................skipped
+And customer enter customer person name into textfield......................skipped
+And customer enter designation into textfield...............................skipped
+And customer enter Business email into textfield............................skipped
+And customer enter mobile number into textfield.............................skipped
+When customer click on save & Proceed button................................skipped
+And verify the GST number...................................................skipped
+And customer enter sub unit address into textfield..........................skipped
+When customer click on save button..........................................skipped
+And customer upload a authorization letter and click on submit button.......skipped
+Then verify authorization letter confirmation message.......................skipped
+And customer upload a Pan card and click on submit button...................skipped
+Then verify Pan card confirmation message...................................skipped
+And customer upload a GST certificate and click on submit button............skipped
+Then verify GST certificate confirmation message............................skipped
+And customer upload a Bank details and click on submit button...............skipped
+Then verify Bank details confirmation message...............................skipped
+And customer upload a Udyam certificate and click on submit button..........skipped
+Then verify Udyam certificate confirmation message..........................skipped
+And customer upload a IEC certificate and click on submit button............skipped
+Then verify IEC certificate confirmation message............................skipped
+And customer upload a D&B number and click on submit button.................skipped
+Then verify D&B numberconfirmation message..................................skipped
+When customer click on save & proceed button................................skipped
+And verify the redirected to review & submit page...........................skipped
+When customer select the confirm info correctness checkbox..................skipped
+When customer select the accept terms checkbox..............................skipped
+When customer click on submit for verification button.......................skipped
+Then verify the review button page..........................................skipped
 ]]></system-out>
 </testcase>
 </testsuite>
