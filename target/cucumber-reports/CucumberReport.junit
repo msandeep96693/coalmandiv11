@@ -1,10 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="17.315" tests="1" skipped="0" failures="1" errors="0">
-<testcase classname="Customer business profile creation functionality" name="Business info profile creation" time="16.971">
-<failure type="io.cucumber.java.PendingException" message="TODO: implement me">
-<![CDATA[io.cucumber.java.PendingException: TODO: implement me
-	at DefinitionSteps.BusinessprofilecreationStep.verify_the_gst_number(BusinessprofilecreationStep.java:88)
-	at ✽.verify the GST number(file:///C:/Users/User/eclipse/coalmandiv11/src/test/resources/Account%20creation/Businessinfo.feature:36)
+<testsuite name="Cucumber" time="19.732" tests="1" skipped="0" failures="1" errors="0">
+<testcase classname="Customer business profile creation functionality" name="Business info profile creation" time="19.494">
+<failure type="org.openqa.selenium.ElementClickInterceptedException" message="element click intercepted: Element &lt;input autocomplete=&quot;off&quot; class=&quot;ant-select-selection-search-input&quot; role=&quot;combobox&quot; aria-expanded=&quot;false&quot; aria-haspopup=&quot;listbox&quot; aria-owns=&quot;rc_select_4_list&quot; aria-autocomplete=&quot;list&quot; aria-controls=&quot;rc_select_4_list&quot; type=&quot;search&quot; value=&quot;&quot; id=&quot;rc_select_4&quot;&gt; is not clickable at point (695, 155). Other element would receive the click: &lt;div class=&quot;ant-select-item-option-content&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=140.0.7339.80)
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-79-generic', java.version: '21.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [fe03b3ae78789c929364834ffbac814a, clickElement {id=f.DBC2FA9C600B2D42564B3EBA5C2A196B.d.C645CE364FCB39E58AD971C33EF6AF7F.e.54}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.80, chrome: {chromedriverVersion: 140.0.7339.82 (bc93617e21c3..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:35683}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:35683/devtoo..., se:cdpVersion: 140.0.7339.80, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on linux (fe03b3ae78789c929364834ffbac814a)] -&gt; xpath: (//input[@type='search'])[4]]
+Session ID: fe03b3ae78789c929364834ffbac814a">
+<![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <input autocomplete="off" class="ant-select-selection-search-input" role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-owns="rc_select_4_list" aria-autocomplete="list" aria-controls="rc_select_4_list" type="search" value="" id="rc_select_4"> is not clickable at point (695, 155). Other element would receive the click: <div class="ant-select-item-option-content">...</div>
+  (Session info: chrome=140.0.7339.80)
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-79-generic', java.version: '21.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [fe03b3ae78789c929364834ffbac814a, clickElement {id=f.DBC2FA9C600B2D42564B3EBA5C2A196B.d.C645CE364FCB39E58AD971C33EF6AF7F.e.54}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.80, chrome: {chromedriverVersion: 140.0.7339.82 (bc93617e21c3..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:35683}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:35683/devtoo..., se:cdpVersion: 140.0.7339.80, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on linux (fe03b3ae78789c929364834ffbac814a)] -> xpath: (//input[@type='search'])[4]]
+Session ID: fe03b3ae78789c929364834ffbac814a
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy23.click(Unknown Source)
+	at pageobject.Businesscreationpage.clickonoriginofcoaldropdown(Businesscreationpage.java:187)
+	at DefinitionSteps.BusinessprofilecreationStep.customer_select_a_option_from_origin_of_coal_dropdown(BusinessprofilecreationStep.java:63)
+	at ✽.customer select a option from origin of coal dropdown(file:///home/active34/Documents/coalmandiv11/src/test/resources/Account%20creation/Businessinfo.feature:25)
 ]]>
 </failure>
 <system-out><![CDATA[
@@ -15,7 +48,7 @@ And Enter the email address as "sandeep+skg@rokkun.io" and password as "Sandeep@
 And Clicks on the login button..............................................passed
 When customer click on create business profile button.......................passed
 And customer click on image upload icon.....................................passed
-And customer enter remember As into textfield...............................passed
+And customer enter remember As into textfield...............................skipped
 And customer enter GST number into textfield................................passed
 And customer click on verify GST button.....................................passed
 And customer verify the business name and registered address data...........skipped
@@ -29,8 +62,8 @@ And customer enter customer person name into textfield......................skip
 And customer enter designation into textfield...............................skipped
 And customer enter Business email into textfield............................skipped
 And customer enter mobile number into textfield.............................skipped
-When customer click on Proceed button.......................................passed
-And verify the GST number...................................................pending
+When customer click on Proceed button.......................................skipped
+And verify the GST number...................................................skipped
 And customer enter sub unit address into textfield..........................skipped
 When customer click on save button..........................................skipped
 And customer upload a authorization letter and click on submit button.......skipped

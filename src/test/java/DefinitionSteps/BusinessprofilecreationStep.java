@@ -10,14 +10,14 @@ public class BusinessprofilecreationStep extends BasicClass {
 
 	
 	@When("customer click on create business profile button")
-	public void customer_click_on_create_business_profile_button() {
+	public void customer_click_on_create_business_profile_button() throws InterruptedException {
 		business = new Businesscreationpage(driver);
 		System.out.println("check driver :- "+driver);
 		business.clickoncreatebusinessprofilebutton();
 		
 	}
 	@When("customer click on image upload icon")
-	public void customer_click_on_image_upload_icon() {
+	public void customer_click_on_image_upload_icon() throws InterruptedException {
 	   business.uploadbusinessprofile();
 	}
 	
@@ -55,7 +55,7 @@ public class BusinessprofilecreationStep extends BasicClass {
 	    business.clickonindustrydropdown();
 	}
 	@When("customer select a option from product to Trade dropdown")
-	public void customer_select_a_option_from_product_to_trade_dropdown() throws AWTException {
+	public void customer_select_a_option_from_product_to_trade_dropdown() throws AWTException, InterruptedException {
 	    business.clickonproducttotradedropdown();
 	}
 	@When("customer select a option from origin of coal dropdown")

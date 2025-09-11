@@ -5,6 +5,7 @@ import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.util.List;
 
+import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -24,7 +25,7 @@ public class Businesscreationpage extends Basicpage {
 	@FindBy(xpath="/html/body/div/div/div/div[3]/div/div[2]/button/span")
 	private WebElement btnCreateBusinessProfile;
 
-	@FindBy(xpath="/html/body/div/div/div/div[2]/div/div/div[3]/div/form/div[1]/div/span/div/span/div")
+	@FindBy(xpath="//input[@type='file']")
 	private WebElement uploadProfile;
 	
 	@FindBy(xpath="(//input[@type='text'])[1]")
@@ -83,17 +84,31 @@ public class Businesscreationpage extends Basicpage {
 	
 	
 	
-	public void clickoncreatebusinessprofilebutton()
+	public void clickoncreatebusinessprofilebutton() throws InterruptedException
 	{
+		Thread.sleep(2000);
 		waitforElement(btnCreateBusinessProfile);
 		btnCreateBusinessProfile.click();
 	}
 	
-	public void uploadbusinessprofile()
+	public void uploadbusinessprofile() throws InterruptedException
 	{
-//		waitforElement(uploadProfile);
-//		uploadProfile.sendKeys("C://Users//User//Desktop//Background images//Bg-2.jpg");
-		System.out.println("upload file");
+//		Thread.sleep(5000);
+//		JavascriptExecutor js = (JavascriptExecutor) driver;
+//		js.executeScript("arguments[0].style.display='block';", uploadProfile);
+//		uploadProfile.sendKeys("/home/active34/Desktop/photos/A16Z crypto.jpeg");
+		
+		try {
+		Thread.sleep(5000);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].style.display='block';", uploadProfile);
+		uploadProfile.sendKeys("/home/active34/Desktop/photos/A16Z crypto.jpeg");
+		} catch (ElementNotInteractableException e) {
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].style.display='block';", uploadProfile);
+			uploadProfile.sendKeys("/home/active34/Desktop/photos/A16Z crypto.jpeg");
+		}
+
 	}
 	
 	public void businessinfotextfield(String remembername)
@@ -152,7 +167,7 @@ public class Businesscreationpage extends Basicpage {
 		js.executeScript("arguments[0].scrollIntoView(true);", contactnamefield);
 	}
 	
-	public void clickonproducttotradedropdown() throws AWTException
+	public void clickonproducttotradedropdown() throws AWTException, InterruptedException
 	{
 		waitforElement(producttotradedropdown);
 		producttotradedropdown.click();
@@ -160,6 +175,7 @@ public class Businesscreationpage extends Basicpage {
 		waitforElement(petcokeoption);
 		petcokeoption.click();
 		
+		Thread.sleep(100);
 		Robot rt = new Robot();
 		rt.keyPress(KeyEvent.VK_ESCAPE);
 		rt.keyRelease(KeyEvent.VK_ESCAPE);
