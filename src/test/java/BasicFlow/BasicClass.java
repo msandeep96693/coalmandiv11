@@ -23,6 +23,8 @@ public class BasicClass {
 	
 	
 	public static WebDriver driver;
+	public AllClassObjects pom;
+	
 	public signinpage sign;
 	public createaccountpage createaccount;
 	public Businesscreationpage business;
@@ -45,6 +47,8 @@ public class BasicClass {
 		
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		
+		pom = new AllClassObjects(driver);
 		
 		}
 	
