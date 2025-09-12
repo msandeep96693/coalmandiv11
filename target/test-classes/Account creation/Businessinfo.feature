@@ -30,6 +30,9 @@ And customer enter Business email into textfield
 And customer enter mobile number into textfield
 When customer click on Proceed button
 
+And customer verify the review page
+When click on add sub business unit button
+
 #Add sub business unit
 
 And customer enter remember As into textfield

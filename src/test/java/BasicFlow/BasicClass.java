@@ -68,7 +68,7 @@ public class BasicClass {
 	   public String setRandomBusinessName()
 	   {
 		 String randomstring=RandomStringUtils.random(4,"abcdefghijklmnopqrstuvwxyz");
-		 return "Goalcraft"+randomstring;
+		 return "Remember me"+randomstring;
 	   }
 	   
 	   public String setRandomFirstName()

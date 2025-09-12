@@ -24,7 +24,7 @@ public class BusinessprofilecreationStep extends BasicClass {
 	
 	@When("customer enter remember As into textfield")
 	public void customer_enter_remember_as_into_textfield() {
-	    business.businessinfotextfield("Remembername123");
+	    business.businessinfotextfield(setRandomBusinessName());
 	}
 	
 	@When("customer enter GST number into textfield")
