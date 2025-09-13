@@ -31,7 +31,7 @@ And customer enter mobile number into textfield
 When customer click on Proceed button
 
 And customer verify the review page
-When click on add sub business unit button
+When user click on add sub business unit button
 
 #Add sub business unit
 
@@ -54,26 +54,30 @@ When customer click on save button
 
 #Add kyc documents
 
-And customer upload a authorization letter and click on submit button
-Then verify authorization letter confirmation message
+When the user uploads an authorization letter and submits the form
+Then the authorization letter success confirmation message should be displayed
 
+When the user uploads an PAN card and submits the form
+Then the PAN card success confirmation message should be displayed
 
-And customer upload a Pan card and click on submit button
-Then verify Pan card confirmation message
-And customer upload a GST certificate and click on submit button
-Then verify GST certificate confirmation message
-And customer upload a Bank details and click on submit button
-Then verify Bank details confirmation message
-And customer upload a Udyam certificate and click on submit button
-Then verify Udyam certificate confirmation message
-And customer upload a IEC certificate and click on submit button
-Then verify IEC certificate confirmation message
-And customer upload a D&B number and click on submit button
-Then verify D&B numberconfirmation message
+When the user uploads an GST certificate and submits the form
+Then the GST certificate success confirmation message should be displayed
+
+When the user submits the form with valid bank details and a cancelled cheque
+Then the form should be submitted successfully
+
+When the user submits the form with valid Udyam certificate details and Upload Udyam Certificate file 
+Then the form should be submitted successfully
+
+When the user submits the form with valid IEC certificate details and Upload IEC certificate file
+Then the form should be submitted successfully
+
+When the user submits the form with valid D&B numberer details and Upload D&B number file
+Then the form should be submitted successfully
+
 When customer click on save & proceed button
-And verify the redirected to review & submit page
-When customer select the confirm info correctness checkbox
-When customer select the accept terms checkbox
+And the user redirected to review & submit page
+When customer select the confirm info correctness and accept terms checkbox
 When customer click on submit for verification button
 Then verify the review button page
 

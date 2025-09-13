@@ -8,7 +8,7 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions( features = {"src/test/resources/Account creation/Businessinfo.feature"},
  				glue = {"DefinitionSteps" },
- 				dryRun = true,
+ 				dryRun = false,
 // 				dryRun true will not execute
  				monochrome = true,
  				plugin = {

@@ -1,25 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="25.727" tests="1" skipped="0" failures="1" errors="0">
-<testcase classname="Customer business profile creation functionality" name="Business info profile creation" time="25.321">
-<failure type="org.junit.ComparisonFailure" message="expected:&lt;[coalmandi]&gt; but was:&lt;[rokkun.dev | 522: Connection timed out]&gt;">
-<![CDATA[org.junit.ComparisonFailure: expected:<[coalmandi]> but was:<[rokkun.dev | 522: Connection timed out]>
-	at org.junit.Assert.assertEquals(Assert.java:117)
-	at org.junit.Assert.assertEquals(Assert.java:146)
-	at DefinitionSteps.LoginStep.verify_that_the_customer_is_navigated_to_the_customer_website(LoginStep.java:31)
-	at ✽.Verify that the customer is navigated to the customer website(file:///C:/Users/User/eclipse/coalmandiv11/src/test/resources/Account%20creation/Businessinfo.feature:6)
+<testsuite name="Cucumber" time="19.243" tests="1" skipped="0" failures="1" errors="0">
+<testcase classname="Customer business profile creation functionality" name="Business info profile creation" time="19.024">
+<failure type="org.openqa.selenium.ElementNotInteractableException" message="element not interactable
+  (Session info: chrome=140.0.7339.80)
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-79-generic', java.version: '21.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [b2627200f8b1f95bd1592313aa3de048, sendKeysToElement {value=[Ljava.lang.CharSequence;@e48bf9a, id=f.BE68867A74B784F5A0CEDF558C006543.d.84B6D33AE87275D62526DFD5C1331F8A.e.103}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.80, chrome: {chromedriverVersion: 140.0.7339.82 (bc93617e21c3..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:36567}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:36567/devtoo..., se:cdpVersion: 140.0.7339.80, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on linux (b2627200f8b1f95bd1592313aa3de048)] -&gt; xpath: //div[@title='Coking Coal']/div]
+Session ID: b2627200f8b1f95bd1592313aa3de048">
+<![CDATA[org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=140.0.7339.80)
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-79-generic', java.version: '21.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [b2627200f8b1f95bd1592313aa3de048, sendKeysToElement {value=[Ljava.lang.CharSequence;@e48bf9a, id=f.BE68867A74B784F5A0CEDF558C006543.d.84B6D33AE87275D62526DFD5C1331F8A.e.103}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.80, chrome: {chromedriverVersion: 140.0.7339.82 (bc93617e21c3..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:36567}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:36567/devtoo..., se:cdpVersion: 140.0.7339.80, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on linux (b2627200f8b1f95bd1592313aa3de048)] -> xpath: //div[@title='Coking Coal']/div]
+Session ID: b2627200f8b1f95bd1592313aa3de048
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:110)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy23.sendKeys(Unknown Source)
+	at pageobject.Businesscreationpage.clickonproducttotradedropdown(Businesscreationpage.java:188)
+	at DefinitionSteps.BusinessprofilecreationStep.customer_select_a_option_from_product_to_trade_dropdown(BusinessprofilecreationStep.java:62)
+	at ✽.customer select a option from product to Trade dropdown(file:///home/active34/Documents/coalmandiv11/src/test/resources/Account%20creation/Businessinfo.feature:24)
 ]]>
 </failure>
 <system-out><![CDATA[
 Given user should navigate to the login page................................passed
 When Enter the url as "https://coalmandi.rokkun.dev/".......................passed
-Then Verify that the customer is navigated to the customer website..........failed
-And Enter the email address as "sandeep+skg@rokkun.io" and password as "Sandeep@123".skipped
-And Clicks on the login button..............................................skipped
-When customer click on create business profile button.......................skipped
-And customer click on image upload icon.....................................skipped
+Then Verify that the customer is navigated to the customer website..........passed
+And Enter the email address as "sandeep+skg@rokkun.io" and password as "Sandeep@123".passed
+And Clicks on the login button..............................................passed
+When customer click on create business profile button.......................passed
+And customer click on image upload icon.....................................passed
 And customer enter remember As into textfield...............................skipped
-And customer enter GST number into textfield................................skipped
-And customer click on verify GST button.....................................skipped
+And customer enter GST number into textfield................................passed
+And customer click on verify GST button.....................................passed
 And customer verify the business name and registered address data...........skipped
 And customer enter city into textfield......................................skipped
 And customer enter state into textfield.....................................skipped
@@ -32,27 +63,25 @@ And customer enter designation into textfield...............................skip
 And customer enter Business email into textfield............................skipped
 And customer enter mobile number into textfield.............................skipped
 When customer click on Proceed button.......................................skipped
+And customer verify the review page.........................................skipped
+When user click on add sub business unit button.............................skipped
 And verify the GST number...................................................skipped
 And customer enter sub unit address into textfield..........................skipped
 When customer click on save button..........................................skipped
-And customer upload a authorization letter and click on submit button.......skipped
-Then verify authorization letter confirmation message.......................skipped
-And customer upload a Pan card and click on submit button...................skipped
-Then verify Pan card confirmation message...................................skipped
-And customer upload a GST certificate and click on submit button............skipped
-Then verify GST certificate confirmation message............................skipped
-And customer upload a Bank details and click on submit button...............skipped
-Then verify Bank details confirmation message...............................skipped
-And customer upload a Udyam certificate and click on submit button..........skipped
-Then verify Udyam certificate confirmation message..........................skipped
-And customer upload a IEC certificate and click on submit button............skipped
-Then verify IEC certificate confirmation message............................skipped
-And customer upload a D&B number and click on submit button.................skipped
-Then verify D&B numberconfirmation message..................................skipped
+When the user uploads an authorization letter and submits the form..........skipped
+Then the authorization letter success confirmation message should be displayed.skipped
+When the user uploads an PAN card and submits the form......................skipped
+Then the PAN card success confirmation message should be displayed..........skipped
+When the user uploads an GST certificate and submits the form...............skipped
+Then the GST certificate success confirmation message should be displayed...skipped
+When the user submits the form with valid bank details and a cancelled cheque.skipped
+Then the form should be submitted successfully..............................skipped
+When the user submits the form with valid Udyam certificate details and Upload Udyam Certificate file.skipped
+When the user submits the form with valid IEC certificate details and Upload IEC certificate file.skipped
+When the user submits the form with valid D&B numberer details and Upload D&B number file.skipped
 When customer click on save & proceed button................................skipped
-And verify the redirected to review & submit page...........................skipped
-When customer select the confirm info correctness checkbox..................skipped
-When customer select the accept terms checkbox..............................skipped
+And the user redirected to review & submit page.............................skipped
+When customer select the confirm info correctness and accept terms checkbox.skipped
 When customer click on submit for verification button.......................skipped
 Then verify the review button page..........................................skipped
 ]]></system-out>

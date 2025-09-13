@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -72,6 +73,15 @@ public class Businesscreationpage extends Basicpage {
 	
 	@FindBy(xpath = "//div[.='PET Coke']") // /html/body/div[5]/div/div/div[2]/div/div/div/div[1]/div
 	private WebElement petcokeoption;
+	
+	@FindBy(xpath = "//div[@title='Coking Coal']/div")  // //div[.='Coking Coal']
+	private WebElement cokingcoaloption;
+	
+	@FindBy(xpath = "//div[.='Thermal Coal']")
+	private WebElement thermalcoaloption;
+	
+	@FindBy(xpath = "//div[.='Metallurgical Coal']")
+	private WebElement metallurgicalcoaloption;
 	
 	@FindBy(xpath = "(//input[@type='search'])[4]")
 	private WebElement originofcoaldropdown;
@@ -172,13 +182,15 @@ public class Businesscreationpage extends Basicpage {
 		waitforElement(producttotradedropdown);
 		producttotradedropdown.click();
 		
-		waitforElement(petcokeoption);
-		petcokeoption.click();
+		waitforElement(cokingcoaloption);
+		System.out.println(cokingcoaloption.getText());
+		cokingcoaloption.click();
+		cokingcoaloption.sendKeys(Keys.ESCAPE);
 		
-		Thread.sleep(100);
-		Robot rt = new Robot();
-		rt.keyPress(KeyEvent.VK_ESCAPE);
-		rt.keyRelease(KeyEvent.VK_ESCAPE);
+		
+//		Robot rt = new Robot();
+//		rt.keyPress(KeyEvent.VK_ESCAPE);
+//		rt.keyRelease(KeyEvent.VK_ESCAPE);
 	}
 	
 	public void clickonoriginofcoaldropdown()
