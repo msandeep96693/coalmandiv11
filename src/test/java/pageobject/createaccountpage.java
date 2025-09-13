@@ -69,7 +69,7 @@ public class createaccountpage  extends Basicpage {
 	@FindBy(xpath = "//span[.='Create Account']")
 	private WebElement createaccountbtn;
 	
-	@FindBy(xpath = "(//button[@type='button'])[1]")
+	@FindBy(xpath = "//span[.='Logout']/..") // (//button[@type='button'])[1]
 	private WebElement logoutbutton;
 	
 	@FindBy(xpath = "//h3[.='Account Created']")
@@ -176,7 +176,7 @@ public class createaccountpage  extends Basicpage {
 	
 	public void clickonlogoutbutton() throws InterruptedException
 	{
-		Thread.sleep(5000);
+		Thread.sleep(6000);
 		try {
 			waitforElement(logoutbutton);
 			logoutbutton.click();

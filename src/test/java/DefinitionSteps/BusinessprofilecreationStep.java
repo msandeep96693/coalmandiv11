@@ -31,16 +31,14 @@ public class BusinessprofilecreationStep extends BasicClass {
 	
 	@And("customer enter GST number into textfield")
 	public void customer_enter_gst_number_into_textfield() {
-	   business.entergstnumberfield("36AAFCK8053R1ZS");
+	   business.entergstnumberfield("32AAHFC3021A1ZH");
 	}
 	@And("customer click on verify GST button")
 	public void customer_click_on_verify_gst_button() {
 	    business.clickonverifygstnumber();
 	}
-	@And("customer verify the business name and registered address data")
-	public void customer_verify_the_business_name_and_registered_address_data() {
-	    System.out.println("Verified");
-	}
+	
+	
 	@And("customer enter city into textfield")
 	public void customer_enter_city_into_textfield() {
 	    business.entercityfield("chennai");
@@ -57,6 +55,13 @@ public class BusinessprofilecreationStep extends BasicClass {
 	public void customer_select_a_option_from_industry_dropdown() {
 	    business.clickonindustrydropdown();
 	}
+	
+	@And("scroll the page upto to the contact field")
+	public void scroll_the_page_upto_to_the_contact_field()
+	{
+		business.scrolluptocontactfield();
+	}
+	
 	@And("customer select a option from product to Trade dropdown")
 	public void customer_select_a_option_from_product_to_trade_dropdown() throws AWTException, InterruptedException {
 	    business.clickonproducttotradedropdown();
@@ -83,36 +88,55 @@ public class BusinessprofilecreationStep extends BasicClass {
 	}
 	@When("customer click on Proceed button")
 	public void customer_click_on_proceed_button() {
-	    System.out.println("clicked");
+		business.clickonsaveandproceedbutton();
 	}
 	
 	// review page 
 	
 	@And("customer verify the review page")
 	public void customer_verify_the_review_page() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	    business.verifyreviewpage();
 	}
 	@When("user click on add sub business unit button")
 	public void user_click_on_add_sub_business_unit_button() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	    business.clickonaddbusinessunitbutton();
 	}
 	
 	@And("verify the GST number")
 	public void verify_the_gst_number() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	    business.verifyGSTnumber();
 	}
+	@And("customer verify the business name")
+	public void customer_verify_the_business_name() {
+	    business.verifybusinessname();
+	}
+	
+	@And("scroll the page upto the product to trade")
+	public void scroll_the_page_upto_the_product_to_trade()
+	{
+		business.scrolluptothepage();
+	}
+	
+	@And("scroll upto the business email field")
+	public void scroll_upto_the_business_email_field()
+	{
+		
+	}
+	
 	@And("customer enter sub unit address into textfield")
 	public void customer_enter_sub_unit_address_into_textfield() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	    business.entersubunitaddress("Banglore");
 	}
 	@When("customer click on save button")
 	public void customer_click_on_save_button() {
 	    // Write code here that turns the phrase above into concrete actions
 	    throw new io.cucumber.java.PendingException();
+	}
+	
+	@Then("verify the additional sub unit business profile created")
+	public void verify_the_additional_sub_unit_business_profile_created()
+	{
+		
 	}
 	
 	// kyc page

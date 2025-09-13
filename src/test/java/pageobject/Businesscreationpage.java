@@ -5,6 +5,7 @@ import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.util.List;
 
+import org.junit.Assert;
 import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -89,10 +90,23 @@ public class Businesscreationpage extends Basicpage {
 	@FindBy(xpath = "//div[.='Domestic']") // /html/body/div[3]/div/div/div[2]/div/div/div/div[1]/div
 	private WebElement domesticoption;  
 	
+	@FindBy(xpath = "//button[@type='submit']")
+	private WebElement saveandproceedbutton;
 	
+	@FindBy(xpath = "//span[.='Add Sub-Business Unit']/..")
+	private WebElement addbusinessunitbutton;
 	
+	@FindBy(xpath = "(//input[@type='text'])[3]")
+	private WebElement businessnamefielddata;
 	
+	@FindBy(xpath = "//div[@class='ant-form-item-control-input']/div/textarea")
+	private WebElement subunitaddressfielddata;
 	
+	@FindBy(xpath = "//span[.='Save']/..")
+	private WebElement savebutton;
+	
+	@FindBy(xpath = "//span[.='Proceed to KYC']/..")
+	private WebElement proceedtokycbutton;
 	
 	public void clickoncreatebusinessprofilebutton() throws InterruptedException
 	{
@@ -103,20 +117,16 @@ public class Businesscreationpage extends Basicpage {
 	
 	public void uploadbusinessprofile() throws InterruptedException
 	{
-//		Thread.sleep(5000);
-//		JavascriptExecutor js = (JavascriptExecutor) driver;
-//		js.executeScript("arguments[0].style.display='block';", uploadProfile);
-//		uploadProfile.sendKeys("/home/active34/Desktop/photos/A16Z crypto.jpeg");
-		
+		// /home/active34/Desktop/photos/A16Z crypto.jpeg
 		try {
 		Thread.sleep(5000);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].style.display='block';", uploadProfile);
-		uploadProfile.sendKeys("/home/active34/Desktop/photos/A16Z crypto.jpeg");
+		uploadProfile.sendKeys("C:\\Users\\User\\Desktop\\Background images\\Bg-2.jpg");
 		} catch (ElementNotInteractableException e) {
 			JavascriptExecutor js = (JavascriptExecutor) driver;
 			js.executeScript("arguments[0].style.display='block';", uploadProfile);
-			uploadProfile.sendKeys("/home/active34/Desktop/photos/A16Z crypto.jpeg");
+			uploadProfile.sendKeys("C:\\Users\\User\\Desktop\\Background images\\Bg-2.jpg");
 		}
 
 	}
@@ -132,6 +142,15 @@ public class Businesscreationpage extends Basicpage {
 	{
 		waitforElement(gstnumberfield);
 		gstnumberfield.sendKeys(gstnumber);
+		String GSTnumber = gstnumberfield.getText();
+		System.out.println("GST number :-"+ GSTnumber);
+	}
+	
+	public String Getgstnumber()
+	{
+		String GSTnumber = gstnumberfield.getText();
+		System.out.println("GST number :-"+ GSTnumber);
+		return GSTnumber;
 	}
 	
 	public void clickonverifygstnumber()
@@ -172,7 +191,10 @@ public class Businesscreationpage extends Basicpage {
 		
 		waitforElement(brickkilnoption);
 		brickkilnoption.click();
-		
+	}
+	
+	public void scrolluptocontactfield()
+	{
 		JavascriptExecutor js=(JavascriptExecutor)driver;
 		js.executeScript("arguments[0].scrollIntoView(true);", contactnamefield);
 	}
@@ -185,12 +207,12 @@ public class Businesscreationpage extends Basicpage {
 		waitforElement(cokingcoaloption);
 		System.out.println(cokingcoaloption.getText());
 		cokingcoaloption.click();
-		cokingcoaloption.sendKeys(Keys.ESCAPE);
+		//cokingcoaloption.sendKeys(Keys.ESCAPE);
 		
 		
-//		Robot rt = new Robot();
-//		rt.keyPress(KeyEvent.VK_ESCAPE);
-//		rt.keyRelease(KeyEvent.VK_ESCAPE);
+		Robot rt = new Robot();
+		rt.keyPress(KeyEvent.VK_ESCAPE);
+		rt.keyRelease(KeyEvent.VK_ESCAPE);
 	}
 	
 	public void clickonoriginofcoaldropdown()
@@ -228,5 +250,76 @@ public class Businesscreationpage extends Basicpage {
 		mobilenumberfield.sendKeys(mobilenumber);
 	}
 
+	public void clickonsaveandproceedbutton()
+	{
+		waitforElement(saveandproceedbutton);
+		saveandproceedbutton.click();
+	}
+	
+	
+	// Review page 
+	
+	public String verifyreviewpage()
+	{
+		String Reviewurl = driver.getCurrentUrl();
+		System.out.println(Reviewurl);
+		return Reviewurl;
+	}
+	
+	public void clickonaddbusinessunitbutton()
+	{
+		waitforElement(addbusinessunitbutton);
+		addbusinessunitbutton.click();
+	}
+	
+	public void verifyGSTnumber()
+	{
+		String actualValue = gstnumberfield.getAttribute("value");
+		System.out.println("Actual Value :- "+ actualValue);
+		String Expectedvalue = Getgstnumber();
+		Assert.assertEquals(Expectedvalue, actualValue, "GST number does not match");	
+	}
+	
+	public void verifybusinessname()
+	{
+		String actualbusinessname = businessnamefielddata.getAttribute("value");
+		System.out.println("Business name :- "+ actualbusinessname);
+	}
+	
+	public void scrolluptothepage()
+	{
+		scrollUntilElementVisible(producttotradedropdown);
+	}
+	
+	public void scrolluptobusinessfield()
+	{
+		scrollUntilElementVisible(emailfield);
+	}
+	
+	public void entersubunitaddress(String subunitaddresss)
+	{
+		waitforElement(subunitaddressfielddata);
+		subunitaddressfielddata.sendKeys(subunitaddresss);
+	}
+	
+	public void clickonsavebutton()
+	{
+		waitforElement(savebutton);
+		savebutton.click();
+	}
+	
+	// review page after add sub unit business profile 
+	
+	public void verifyadditionalbusinessprofiledata()
+	{
+		
+	}
+	
+	public void clickonsaveandproceedtokycbutton()
+	{
+		waitforElement(proceedtokycbutton);
+		proceedtokycbutton.click();
+	}
+	
 	
 }

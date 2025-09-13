@@ -4,7 +4,7 @@ Scenario: Business info profile creation
 Given user should navigate to the login page
 When Enter the url as "https://coalmandi.rokkun.dev/"
 Then Verify that the customer is navigated to the customer website
-And Enter the email address as "sandeep+skg@rokkun.io" and password as "Sandeep@123"
+And Enter the email address as " sandeep+ynu@rokkun.io" and password as "Sandeep@123"
 And  Clicks on the login button
 #And Profile profile view page will display
 
@@ -15,11 +15,12 @@ And customer click on image upload icon
 And customer enter remember As into textfield
 And customer enter GST number into textfield
 And customer click on verify GST button
-And customer verify the business name and registered address data
+#And customer verify the business name in business info
 And customer enter city into textfield
 And customer enter state into textfield
 
 And customer select a option from ownership dropdown
+And scroll the page upto to the contact field
 And customer select a option from industry dropdown
 And customer select a option from product to Trade dropdown
 And customer select a option from origin of coal dropdown
@@ -37,13 +38,15 @@ When user click on add sub business unit button
 
 And customer enter remember As into textfield
 And verify the GST number
-And customer verify the business name and registered address data
+And customer verify the business name
 And customer enter city into textfield
 And customer enter state into textfield
+And scroll the page upto the product to trade
 And customer enter sub unit address into textfield
 And customer select a option from ownership dropdown
 And customer select a option from industry dropdown
 And customer select a option from product to Trade dropdown
+And scroll upto the business email field
 And customer select a option from origin of coal dropdown
 
 And customer enter customer person name into textfield
@@ -51,6 +54,7 @@ And customer enter designation into textfield
 And customer enter Business email into textfield
 And customer enter mobile number into textfield
 When customer click on save button
+Then verify the additional sub unit business profile created
 
 #Add kyc documents
 
