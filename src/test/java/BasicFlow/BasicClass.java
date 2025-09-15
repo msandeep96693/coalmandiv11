@@ -16,6 +16,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import pageobject.Businesscreationpage;
 import pageobject.createaccountpage;
+import pageobject.createlistingpage;
 import pageobject.signinpage;
 
 
@@ -28,6 +29,7 @@ public class BasicClass {
 	public signinpage sign;
 	public createaccountpage createaccount;
 	public Businesscreationpage business;
+	public createlistingpage createlisting;
 	
 	@Before
 	public void InitialiseBrowser(String BrowserName)  {

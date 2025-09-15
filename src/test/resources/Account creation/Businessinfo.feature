@@ -85,6 +85,14 @@ When customer select the confirm info correctness and accept terms checkbox
 When customer click on submit for verification button
 Then verify the review button page
 
+And user click on profile icon
+And user click on logout button
+Then verify the login page is displayed
+And close the application
+
+
+
+
 
 
 
