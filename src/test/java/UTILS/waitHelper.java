@@ -54,6 +54,11 @@ public class waitHelper
 		
 	}
 	
+	public void waituntilelementclickable(WebElement element, Duration time)
+	{
+		WebDriverWait wait = new WebDriverWait(driver, time);
+		wait.until(ExpectedConditions.elementToBeClickable(element));
+	}
 	
 	public static String captureScreenShot(WebDriver driver , String testName) {
 		

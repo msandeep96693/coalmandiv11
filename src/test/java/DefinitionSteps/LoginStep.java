@@ -106,7 +106,8 @@ public class LoginStep extends BasicClass  {
 	
 	@Then("verify the login page is displayed")
 	public void verify_the_login_page_is_displayed() {
-		System.out.println("Verified");
+		System.out.println(driver.getCurrentUrl());
+		
 	    
 	}
 

@@ -10,6 +10,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import UTILS.waitHelper;
 
@@ -51,6 +53,12 @@ public class Basicpage
 		wait=new waitHelper(driver);
 		wait.waitUntilLoaderToClose(element, Duration.ofSeconds(10));
 	}
+	
+	public void waituntilelementvisibleandclickable(WebElement element)
+	{
+		wait = new waitHelper(driver);
+		wait.waituntilelementclickable(element, Duration.ofSeconds(30));
+	}
 		
 	public void scrollUntilElementVisible(WebElement element)
 	{
@@ -77,6 +85,24 @@ public class Basicpage
 		js.executeScript("arguments[0].style.display='block';",element);
 	}
 	
+	
+	// --------------------------------------------------------------------------------
+	
+	
+	 public static WebElement waitForClick(WebDriver driver, WebElement element, int timeout) {
+	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeout));
+	       // wait.until(ExpectedConditions.presenceOfElementLocated(getLocator(element)));
+	        return wait.until(ExpectedConditions.elementToBeClickable(element));
+	    }
+	
+	
+	public static void safeClick(WebDriver driver, WebElement element, int timeout) {
+        try {
+            waitForClick(driver, element, timeout).click();
+        } catch (Exception e) {
+            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+        }
+    }
 	
 	
 }

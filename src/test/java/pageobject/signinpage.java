@@ -7,9 +7,11 @@ import java.time.Duration;
 import java.util.List;
 
 import org.jsoup.select.Evaluator.IsEmpty;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.ElementNotInteractableException;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -62,7 +64,7 @@ public class signinpage extends Basicpage {
 //	@FindBy(xpath = "//span[@aria-label='user']") 
 //	private WebElement clickonprofile;
 	
-	@FindBy(xpath = "(//span[@role='img'])[3]") 
+	@FindBy(xpath = "/html/body/div/div/div[2]/header/div/div[2]/div[2]/span[2]") 
 	private WebElement clickonprofile;
 	
 	@FindBy(xpath = "//span[.='Logout']")
@@ -100,15 +102,19 @@ public class signinpage extends Basicpage {
 	
 	public void clickonprofileicon() throws InterruptedException 
 	{
-		Thread.sleep(2000);
+
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("arguments[0].click();", clickonprofile );
 		
-		try {
-		waitforElement(clickonprofile);
-		clickonprofile.click();	
-		} catch (org.openqa.selenium.ElementClickInterceptedException e) {
-			waitforElement(clickonprofile);
-			clickonprofile.click();	
-		}
+//		try {
+////		waitforElement(clickonprofile);
+//		waituntilelementvisibleandclickable(clickonprofile);
+//		clickonprofile.click();	
+//		} catch (ElementClickInterceptedException e) {
+//			waituntilelementvisibleandclickable(clickonprofile);
+//			clickonprofile.click();	
+////			driver.findElement(By.xpath("(//span[@role='img'])[3]")).click();
+//		}
 		
 	}
 	

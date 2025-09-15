@@ -11,7 +11,7 @@ import io.cucumber.junit.CucumberOptions;
  				dryRun = false,
 // 				dryRun true will not execute
  				monochrome = true,
- 				tags = "@loginwithotp",
+ 				tags = "@smoke",
  				plugin = { 
  						"html:Reports/AllInOneReport"
  						

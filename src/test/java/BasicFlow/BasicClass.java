@@ -4,12 +4,15 @@ import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.time.Duration;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -36,7 +39,22 @@ public class BasicClass {
 		
 		if(BrowserName.equalsIgnoreCase("chrome"))
 		{
-			driver = new ChromeDriver();
+			
+			ChromeOptions options = new ChromeOptions();
+//			options.addArguments("user-data-dir=/tmp/chrome-test-profile");  // Linux example
+//			options.addArguments("--disable-features=PasswordManagerEnabled,PasswordLeakDetection,AutofillEnableAccountWallet");
+//			options.addArguments("--no-default-browser-check");
+//			options.addArguments("--no-first-run");
+//			
+//			Map<String, Object> prefs = new HashMap<>();
+//			prefs.put("credentials_enable_service", false);   // disable Chrome credential service
+//			prefs.put("profile.password_manager_enabled", false); // disable password manager popup
+//
+//			options.setExperimentalOption("prefs", prefs);
+//			
+			options.addArguments("disable-notifications");
+			driver = new ChromeDriver(options);
+			
 			
 		} else if(BrowserName.equalsIgnoreCase("firefox")) 
 		{
