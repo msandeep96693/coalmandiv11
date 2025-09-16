@@ -4,7 +4,7 @@ Scenario: Business info profile creation
 Given user should navigate to the login page
 When Enter the url as "https://coalmandi.rokkun.dev/"
 Then Verify that the customer is navigated to the customer website
-And Enter the email address as " sandeep+ynu@rokkun.io" and password as "Sandeep@123"
+And Enter the email address as "sandeep+ijs@rokkun.io" and password as "Sandeep@123"
 And  Clicks on the login button
 #And Profile profile view page will display
 

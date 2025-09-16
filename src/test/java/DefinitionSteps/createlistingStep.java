@@ -17,17 +17,20 @@ public class createlistingStep extends BasicClass {
 	@When("the user selects a valid Business Profile")
 	public void the_user_selects_a_valid_business_profile() throws InterruptedException {
 	    createlisting.clickoncreatelistingbutton();
+	    createlisting.labelcount();
+	    createlisting.selectDropdownOption("Business Profile", "mahindra123"); 
 //	    createlisting.fetchallthelabelnameforallfields();
 	    
-	    createlisting.labelcount();
-	    createlisting.clickondropdown();
-	   // createlisting.fetchoptionname();
+	    
+//	    createlisting.clickondropdown();
+//	    createlisting.fetchoptionname();
+	    
+	    
 	}
 	
 	@When("the user selects a valid Coal Type")
 	public void the_user_selects_a_valid_coal_type() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	    createlisting.selectDropdownOption("Coal Type", "PET Coke");
 	}
 	@When("the user selects Origin of Coal")
 	public void the_user_selects_origin_of_coal() {

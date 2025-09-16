@@ -1,5 +1,6 @@
 package pageobject;
 
+import java.sql.Time;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -7,6 +8,10 @@ import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import io.cucumber.messages.types.Duration;
 
 public class createlistingpage extends Basicpage {
 	
@@ -24,10 +29,10 @@ public class createlistingpage extends Basicpage {
 	@FindBy(xpath = "//label[@class='ant-form-item-required']")
 	private List<WebElement> fetchallthelabelname;
 	
-	@FindBy(xpath = "(//span[@class='ant-select-selection-item'])[1]")  // //div[@class='ant-select-selector']
-	private WebElement clickonalldropdown; 
+	@FindBy(xpath = "//span[@class='ant-select-selection-item']")  // //div[@class='ant-select-selector']
+	private List<WebElement> clickonalldropdown;
 	
-	@FindBy(xpath = "//div[@class='rc-virtual-list-holder-inner']/div") // //div[@class='ant-select-item-option-content']
+	@FindBy(xpath = "//div[@class='ant-select-item-option-content']") //  //div[@class='rc-virtual-list-holder-inner']/div   
 	private List<WebElement> Alldropdownoptionlist;
 	
 	// fixed carbon, moisture and etc field address and EMD%, credit days
@@ -66,7 +71,7 @@ public class createlistingpage extends Basicpage {
 
 	public void clickoncreatelistingbutton() throws InterruptedException
 	{
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		waitforElement(createlistingitembutton);
 		createlistingitembutton.click();
 	}
@@ -82,16 +87,17 @@ public class createlistingpage extends Basicpage {
 //		}
 //	}
 	
+	
 	public void labelcount()
 	{
 		for(int i = 0; i<fetchallthelabelname.size(); i++)
 		{
 			String labelname = fetchallthelabelname.get(i).getText();
-			System.out.println(" count :- "+ fetchallthelabelname.size());
+			//System.out.println(" count :- "+ fetchallthelabelname.size());
 			System.out.println(" Name of label :- "+ labelname);
 		}
 	}
-	
+	/*
 	public void clickondropdown()
 	{
 		try {
@@ -110,9 +116,79 @@ public class createlistingpage extends Basicpage {
 			for(int i = 0; i<Alldropdownoptionlist.size(); i++)
 			{
 				String optionname = Alldropdownoptionlist.get(i).getText();
-				System.out.println(" count :- "+ Alldropdownoptionlist.size());
-				System.out.println(" Name of label :- "+ optionname);
+				System.out.println(" count of option :- "+ Alldropdownoptionlist.size());
+				System.out.println(" Name of option :- "+ optionname);
 			}
 		}
-			
+			*/
+	
+	public void selectOptionFromDropdown(String optionName) {
+	    // Wait for all dropdown options to be visible
+//	    List<WebElement> options = new WebDriverWait(driver, Duration.ofSeconds(10))
+//	            .until(ExpectedConditions.visibilityOfAllElements(Alldropdownoptionlist));
+
+	    for (WebElement option : Alldropdownoptionlist) {
+	        String text = option.getText().trim();
+	        if (text.contains(optionName)) {
+	            System.out.println("Selecting option :- " + text);
+	            waitforElement(option);  // <-- your existing custom wait method
+	            option.click();
+	            return; // Exit after selecting
+	        }
+	    }
+	    throw new RuntimeException("Option '" + optionName + "' not found in dropdown!");
+	}
+	
+	
+	
+	 public void selectDropdownOption(String labelName, String optionName)   //  
+	 {
+	        for (int i = 0; i < fetchallthelabelname.size(); i++) 
+	        {
+	            String currentLabel = fetchallthelabelname.get(i).getText().trim();
+	            System.out.println("Fetch label name :- "+currentLabel);
+
+	            switch (currentLabel)
+	            {
+	                case "Business Profile":
+	                case "Coal Type":
+	                case "Origin of Coal":
+	                case "Source of Coal":
+	                    if (currentLabel.equalsIgnoreCase(labelName)) 
+	                    {
+	                        // Click corresponding dropdown
+	                    	//waitforElement(clickonalldropdown);	
+	                        clickonalldropdown.get(i).click();
+	                        selectOptionFromDropdown(optionName);
+	                        return;
+	                        
+
+//	                        // Find and click option
+//	       // mahindra123 (TOYOTA TSUSHO INSURANCE BROKER INDIA PRIVATE LIMITED)
+//	                        for (WebElement option : Alldropdownoptionlist) 
+//	                        {
+//	                            if (option.getText().trim().equalsIgnoreCase(optionName)) 
+//	                            {
+//	                            	System.out.println("option name :- "+ option);
+//	                            	waitforElement(option);
+//	                                option.click();
+//	                                return; // Exit after selecting
+//	                            }
+//	                        }
+	                    }
+	                    break;
+
+	                default:
+	                    // For labels not handled in switch
+	                    break;
+	            }
+	        }
+	    }
+
+	
+	
+
+	
+	
+	
 }

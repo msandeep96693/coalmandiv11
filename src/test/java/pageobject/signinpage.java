@@ -67,7 +67,7 @@ public class signinpage extends Basicpage {
 	@FindBy(xpath = "/html/body/div/div/div[2]/header/div/div[2]/div[2]/span[2]") 
 	private WebElement clickonprofile;
 	
-	@FindBy(xpath = "//span[.='Logout']")
+	@FindBy(xpath = "//span[contains(.,'Logout')]")    // //span[.='Logout']
 	private WebElement clickonlogoutbtn;
 	
 	
@@ -103,6 +103,8 @@ public class signinpage extends Basicpage {
 	public void clickonprofileicon() throws InterruptedException 
 	{
 
+		Thread.sleep(6000);
+		
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		js.executeScript("arguments[0].click();", clickonprofile );
 		

@@ -118,15 +118,16 @@ public class Businesscreationpage extends Basicpage {
 	public void uploadbusinessprofile() throws InterruptedException
 	{
 		// /home/active34/Desktop/photos/A16Z crypto.jpeg
+		// C:\\Users\\User\\Desktop\\Background images\\Bg-2.jpg
 		try {
 		Thread.sleep(5000);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].style.display='block';", uploadProfile);
-		uploadProfile.sendKeys("C:\\Users\\User\\Desktop\\Background images\\Bg-2.jpg");
+		uploadProfile.sendKeys("/home/active34/Desktop/photos/A16Z crypto.jpeg");
 		} catch (ElementNotInteractableException e) {
 			JavascriptExecutor js = (JavascriptExecutor) driver;
 			js.executeScript("arguments[0].style.display='block';", uploadProfile);
-			uploadProfile.sendKeys("C:\\Users\\User\\Desktop\\Background images\\Bg-2.jpg");
+			uploadProfile.sendKeys("/home/active34/Desktop/photos/A16Z crypto.jpeg");
 		}
 
 	}
@@ -207,12 +208,18 @@ public class Businesscreationpage extends Basicpage {
 		waitforElement(cokingcoaloption);
 		System.out.println(cokingcoaloption.getText());
 		cokingcoaloption.click();
-		//cokingcoaloption.sendKeys(Keys.ESCAPE);
+		
+		try {
+			cokingcoaloption.sendKeys(Keys.ESCAPE);
+		} catch (Exception e) {
+			cokingcoaloption.sendKeys(Keys.ESCAPE);
+		}
 		
 		
-		Robot rt = new Robot();
-		rt.keyPress(KeyEvent.VK_ESCAPE);
-		rt.keyRelease(KeyEvent.VK_ESCAPE);
+		
+//		Robot rt = new Robot();
+//		rt.keyPress(KeyEvent.VK_ESCAPE);
+//		rt.keyRelease(KeyEvent.VK_ESCAPE);
 	}
 	
 	public void clickonoriginofcoaldropdown()
