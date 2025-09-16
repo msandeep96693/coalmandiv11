@@ -23,35 +23,33 @@ public class createlistingStep extends BasicClass {
 	    
 	    
 //	    createlisting.clickondropdown();
-//	    createlisting.fetchoptionname();
+	    createlisting.fetchoptionname();
 	    
 	    
 	}
 	
 	@When("the user selects a valid Coal Type")
-	public void the_user_selects_a_valid_coal_type() {
+	public void the_user_selects_a_valid_coal_type() throws InterruptedException {
 	    createlisting.selectDropdownOption("Coal Type", "PET Coke");
 	}
 	@When("the user selects Origin of Coal")
-	public void the_user_selects_origin_of_coal() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	public void the_user_selects_origin_of_coal() throws InterruptedException {
+		 createlisting.selectDropdownOption("Origin of Coal", "Domestic"); 
+	}
+	
+	@When("the user selects CIL Subsidiary")
+	public void the_user_selects_cil_subsidiary() throws InterruptedException {
+		createlisting.selectDropdownOption("CIL Subsidiary", "Bharat");
 	}
 	@When("the user selects Source of Coal")
-	public void the_user_selects_source_of_coal() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	public void the_user_selects_source_of_coal() throws InterruptedException {
+		 createlisting.selectDropdownOption("Source of Coal", "Private Mines"); 
 	}
 	@When("the user selects Grade of coal except washeries")
-	public void the_user_selects_grade_of_coal_except_washeries() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	public void the_user_selects_grade_of_coal_except_washeries() throws InterruptedException {
+		 
 	}
-	@When("the user selects CIL Subsidiary")
-	public void the_user_selects_cil_subsidiary() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
+	
 	@When("the user selects a valid Mine")
 	public void the_user_selects_a_valid_mine() {
 	    // Write code here that turns the phrase above into concrete actions

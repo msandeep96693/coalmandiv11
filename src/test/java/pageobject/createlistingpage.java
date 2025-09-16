@@ -74,6 +74,8 @@ public class createlistingpage extends Basicpage {
 		Thread.sleep(5000);
 		waitforElement(createlistingitembutton);
 		createlistingitembutton.click();
+		
+		Thread.sleep(2000);
 	}
 	
 //	public void fetchallthelabelnameforallfields()
@@ -110,6 +112,8 @@ public class createlistingpage extends Basicpage {
 		}
 		
 	}
+	
+	*/
 		
 		public void fetchoptionname()
 		{
@@ -120,7 +124,7 @@ public class createlistingpage extends Basicpage {
 				System.out.println(" Name of option :- "+ optionname);
 			}
 		}
-			*/
+			
 	
 	public void selectOptionFromDropdown(String optionName) {
 	    // Wait for all dropdown options to be visible
@@ -129,19 +133,32 @@ public class createlistingpage extends Basicpage {
 
 	    for (WebElement option : Alldropdownoptionlist) {
 	        String text = option.getText().trim();
-	        if (text.contains(optionName)) {
-	            System.out.println("Selecting option :- " + text);
-	            waitforElement(option);  // <-- your existing custom wait method
-	            option.click();
-	            return; // Exit after selecting
-	        }
+	        try {
+	        	if (text.contains(optionName)) 
+	        	{
+		            System.out.println("Selecting option :- " + text);
+		            waitforElement(option);  // <-- your existing custom wait method
+		            option.click();
+		            return; // Exit after selecting
+		        }
+			} catch (Exception e) {
+				System.out.println("Text :-"+ text);
+				if (text.contains(optionName)) 
+				{
+					System.out.println("Selecting option :- " + text);
+		            waitforElement(option);  // <-- your existing custom wait method
+		            option.click();
+		            return; // Exit after selecting
+		        }
+			}
+	        
 	    }
 	    throw new RuntimeException("Option '" + optionName + "' not found in dropdown!");
 	}
 	
 	
 	
-	 public void selectDropdownOption(String labelName, String optionName)   //  
+	 public void selectDropdownOption(String labelName, String optionName) throws InterruptedException   //  
 	 {
 	        for (int i = 0; i < fetchallthelabelname.size(); i++) 
 	        {
@@ -157,8 +174,13 @@ public class createlistingpage extends Basicpage {
 	                    if (currentLabel.equalsIgnoreCase(labelName)) 
 	                    {
 	                        // Click corresponding dropdown
-	                    	//waitforElement(clickonalldropdown);	
+	                    	//waitforElement(clickonalldropdown);
+	                    	System.out.println("verify label name 1 :- "+ currentLabel);
+	                    	
 	                        clickonalldropdown.get(i).click();
+	                        Thread.sleep(3000);
+	                        System.out.println(clickonalldropdown.get(i));
+	                        System.out.println("verify label name 2 :- "+ currentLabel);
 	                        selectOptionFromDropdown(optionName);
 	                        return;
 	                        
