@@ -5,8 +5,10 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -281,15 +283,19 @@ public class createlistingpage extends Basicpage {
 	            
 	            	 if (currentLabel.equalsIgnoreCase(labelName)) 
 	                 {
+	            		 Actions action=new Actions(driver);
+	            		 action.doubleClick(fetchallthelabelname.get(i));
+	            		 action.sendKeys(Keys.TAB);
+	            		 action.sendKeys("Rajanna").perform();
 	                 	
-	                 	Thread.sleep(3000);
-	                 	System.out.println(Allinputfield.size());  
-	                 	 System.out.println("first count :- "+Allinputfield.get(i));
-	                 	Allinputfield.get(i).sendKeys(inputdata);
-//	                     Thread.sleep(1000);
-	                    
-	                     System.out.println("verify label name 2 :- "+ currentLabel);
-	                     return;
+//	                 	Thread.sleep(3000);
+//	                 	System.out.println(Allinputfield.size());  
+//	                 	 System.out.println("first count :- "+Allinputfield.get(i));
+//	                 	Allinputfield.get(i).sendKeys(inputdata);
+////	                     Thread.sleep(1000);
+//	                    
+//	                     System.out.println("verify label name 2 :- "+ currentLabel);
+//	                     return;
 	                 } 
 	            	 break;
 			default:
