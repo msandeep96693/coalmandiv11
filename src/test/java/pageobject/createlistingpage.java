@@ -171,14 +171,40 @@ public class createlistingpage extends Basicpage {
 	                case "Coal Type":
 	                case "Origin of Coal":
 	                case "Source of Coal":
+	                case "Grade":
+	                case "CIL Subsidiary":
+	                case "Mine":
+	                case "Fixed Carbon Percentage":
+	                case "Fixed Carbon MIN/MAX":
+	                case "Ash Content Percentage":
+	                case "Ash Content MIN/MAX":
+	                case "Volatile Matter Percentage":
+	                case "Volatile Matter MIN/MAX":
+	                case "Total Moisture Percentage":
+	                case "Total Moisture MIN/MAX":
+	                case "Delivery mode":
+	                case "Railway siding code":
+	                case "Quantity (MT)":
+	                case "Rate per MT (INR)":
+	                case "Delivery terms":
+	                case "Payment terms":
+	                case "Credit Days":
+	                case "EMD%":
+	                case "Free Payment Period (Days)":
+	                case "Free Lifting Period (Days)":
+	                case "Validity Start Date":
+	                case "Validity End Date":
+	                case "Loading Point Address":
+	                
+	                
 	                    if (currentLabel.equalsIgnoreCase(labelName)) 
 	                    {
 	                        // Click corresponding dropdown
 	                    	//waitforElement(clickonalldropdown);
 	                    	System.out.println("verify label name 1 :- "+ currentLabel);
-	                    	
+	                    	Thread.sleep(3000);
 	                        clickonalldropdown.get(i).click();
-	                        Thread.sleep(3000);
+	                        Thread.sleep(1000);
 	                        System.out.println(clickonalldropdown.get(i));
 	                        System.out.println("verify label name 2 :- "+ currentLabel);
 	                        selectOptionFromDropdown(optionName);

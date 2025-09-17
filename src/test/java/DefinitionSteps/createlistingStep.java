@@ -43,62 +43,52 @@ public class createlistingStep extends BasicClass {
 	}
 	@When("the user selects Source of Coal")
 	public void the_user_selects_source_of_coal() throws InterruptedException {
-		 createlisting.selectDropdownOption("Source of Coal", "Private Mines"); 
+		 createlisting.selectDropdownOption("Source of Coal", "Private Mines");  // Washeries
 	}
 	@When("the user selects Grade of coal except washeries")
 	public void the_user_selects_grade_of_coal_except_washeries() throws InterruptedException {
-		 
+		 createlisting.selectDropdownOption("Grade", "G11");
 	}
 	
 	@When("the user selects a valid Mine")
-	public void the_user_selects_a_valid_mine() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	public void the_user_selects_a_valid_mine() throws InterruptedException {
+	    createlisting.selectDropdownOption("Mine", "Mine A - BCCL");
 	}
 	@When("the user enters data in the Fixed Carbon Percentage field")
 	public void the_user_enters_data_in_the_fixed_carbon_percentage_field() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	   System.out.println("need to enter");
 	}
 	@When("selects Max from the Fixed Carbon MIN\\/MAX dropdown")
-	public void selects_max_from_the_fixed_carbon_min_max_dropdown() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	public void selects_max_from_the_fixed_carbon_min_max_dropdown() throws InterruptedException {
+		createlisting.selectDropdownOption("Fixed Carbon MIN/MAX", "MAX");
 	}
 	@When("enters data in the Ash Content Percentage field")
 	public void enters_data_in_the_ash_content_percentage_field() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		System.out.println("need to enter");
 	}
 	@When("selects Max from the Ash Content MIN\\/MAX dropdown")
-	public void selects_max_from_the_ash_content_min_max_dropdown() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	public void selects_max_from_the_ash_content_min_max_dropdown() throws InterruptedException {
+		createlisting.selectDropdownOption("Ash Content MIN/MAX", "MAX");
 	}
 	@When("enters data in the Volatile Matter Percentage field")
 	public void enters_data_in_the_volatile_matter_percentage_field() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		System.out.println("need to enter");
 	}
 	@When("selects Max from the Volatile Matter MIN\\/MAX dropdown")
-	public void selects_max_from_the_volatile_matter_min_max_dropdown() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	public void selects_max_from_the_volatile_matter_min_max_dropdown() throws InterruptedException {
+		createlisting.selectDropdownOption("Volatile Matter MIN/MAX", "MAX");
 	}
 	@When("enters data in the Total Moisture Percentage field")
 	public void enters_data_in_the_total_moisture_percentage_field() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		System.out.println("need to enter");
 	}
 	@When("selects Max from the Total Moisture MIN\\/MAX dropdown")
-	public void selects_max_from_the_total_moisture_min_max_dropdown() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	public void selects_max_from_the_total_moisture_min_max_dropdown() throws InterruptedException {
+		createlisting.selectDropdownOption("Total Moisture MIN/MAX", "MAX");
 	}
 	@When("the user selects Delivery Mode")
-	public void the_user_selects_delivery_mode() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	public void the_user_selects_delivery_mode() throws InterruptedException {
+		createlisting.selectDropdownOption("Delivery mode", "Rail");
 	}
 	@When("the user enters Quantity in MT")
 	public void the_user_enters_quantity_in_mt() {

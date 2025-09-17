@@ -13,6 +13,7 @@ And the user navigates to the Create Coal Product Listing page
 When the user selects a valid Business Profile
 And the user selects a valid Coal Type
 And the user selects Origin of Coal
+
 And the user selects Source of Coal
 And the user selects Grade of coal except washeries
 And the user selects CIL Subsidiary
