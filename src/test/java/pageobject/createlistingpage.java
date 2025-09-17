@@ -35,6 +35,9 @@ public class createlistingpage extends Basicpage {
 	@FindBy(xpath = "//div[@class='ant-select-item-option-content']") //  //div[@class='rc-virtual-list-holder-inner']/div   
 	private List<WebElement> Alldropdownoptionlist;
 	
+	@FindBy(xpath = "//div[@class='ant-form-item-control-input-content']/input")
+	private List<WebElement> Allinputfield;
+	
 	// fixed carbon, moisture and etc field address and EMD%, credit days
 	@FindBy(xpath = "//input[@type='number']") 
 	private List<WebElement> coalspecificationinputfield;
@@ -61,7 +64,8 @@ public class createlistingpage extends Basicpage {
 	@FindBy(xpath = "//div[contains(@class,'ant-card-head-title')]/..")
 	private WebElement verifycoalnameandpendingstatusname;
 	
-	
+	//  //div[@class='ant-form-item-control-input-content']/input       ::-->Text field
+	//  //div[@class='ant-col ant-form-item-label css-1tbu3z4']/label   ::-->Labels
 	
 	public void clickonlistingfromnavbar()
 	{
@@ -235,8 +239,72 @@ public class createlistingpage extends Basicpage {
 
 	
 	
+	 public void enterdataintoinputfield(String labelName, String inputdata) throws InterruptedException
+	 {
+		 for (int i = 0; i < fetchallthelabelname.size(); i++) 
+	     {
+	         String currentLabel = fetchallthelabelname.get(i).getText().trim();
+	         System.out.println("Fetch label name :- "+currentLabel);
+
+	         switch (currentLabel)
+	         {
+	             
+	             	case "Business Profile":
+	                case "Coal Type":
+	                case "Origin of Coal":
+	                case "Source of Coal":
+	                case "Grade":
+	                case "CIL Subsidiary":
+	                case "Mine":
+	                case "Fixed Carbon Percentage":
+	                case "Fixed Carbon MIN/MAX":
+	                case "Ash Content Percentage":
+	                case "Ash Content MIN/MAX":
+	                case "Volatile Matter Percentage":
+	                case "Volatile Matter MIN/MAX":
+	                case "Total Moisture Percentage":
+	                case "Total Moisture MIN/MAX":
+	                case "Delivery mode":
+	                case "Railway siding code":
+	                case "Quantity (MT)":
+	                case "Rate per MT (INR)":
+	                case "Delivery terms":
+	                case "Payment terms":
+	                case "Credit Days":
+	                case "EMD%":
+	                case "Free Payment Period (Days)":
+	                case "Free Lifting Period (Days)":
+	                case "Validity Start Date":
+	                case "Validity End Date":
+	                case "Loading Point Address":
+	            	 
+	            
+	            	 if (currentLabel.equalsIgnoreCase(labelName)) 
+	                 {
+	                 	
+	                 	Thread.sleep(3000);
+	                 	System.out.println(Allinputfield.size());  
+	                 	 System.out.println("first count :- "+Allinputfield.get(i));
+	                 	Allinputfield.get(i).sendKeys(inputdata);
+//	                     Thread.sleep(1000);
+	                    
+	                     System.out.println("verify label name 2 :- "+ currentLabel);
+	                     return;
+	                 } 
+	            	 break;
+			default:
+	                    // For labels not handled in switch
+	                    break;
+	
+	                    
+	         }
+	     }
+	 }
+	 
+	 
+	 
+}
+
 
 	
-	
-	
-}
+

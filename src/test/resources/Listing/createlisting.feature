@@ -29,10 +29,12 @@ And enters data in the Total Moisture Percentage field
 And selects Max from the Total Moisture MIN/MAX dropdown
 
 And the user selects Delivery Mode
+And the user enters Railway siding code
 And the user enters Quantity in MT
 And the user enters Rate per MT in INR
 And the user selects Delivery Terms
 And the user selects Payment Terms
+And the user enters credit days
 And the user enters EMD%
 And the user enters Free Payment Period in days
 And the user enters Free Lifting Period in days

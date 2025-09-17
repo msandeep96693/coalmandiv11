@@ -55,32 +55,33 @@ public class createlistingStep extends BasicClass {
 	    createlisting.selectDropdownOption("Mine", "Mine A - BCCL");
 	}
 	@When("the user enters data in the Fixed Carbon Percentage field")
-	public void the_user_enters_data_in_the_fixed_carbon_percentage_field() {
-	   System.out.println("need to enter");
+	public void the_user_enters_data_in_the_fixed_carbon_percentage_field() throws InterruptedException {
+	   createlisting.enterdataintoinputfield("Fixed Carbon Percentage", "25");
 	}
 	@When("selects Max from the Fixed Carbon MIN\\/MAX dropdown")
 	public void selects_max_from_the_fixed_carbon_min_max_dropdown() throws InterruptedException {
 		createlisting.selectDropdownOption("Fixed Carbon MIN/MAX", "MAX");
 	}
 	@When("enters data in the Ash Content Percentage field")
-	public void enters_data_in_the_ash_content_percentage_field() {
-		System.out.println("need to enter");
+	public void enters_data_in_the_ash_content_percentage_field() throws InterruptedException {
+		createlisting.enterdataintoinputfield("Ash Content Percentage", "25");
 	}
 	@When("selects Max from the Ash Content MIN\\/MAX dropdown")
 	public void selects_max_from_the_ash_content_min_max_dropdown() throws InterruptedException {
 		createlisting.selectDropdownOption("Ash Content MIN/MAX", "MAX");
 	}
 	@When("enters data in the Volatile Matter Percentage field")
-	public void enters_data_in_the_volatile_matter_percentage_field() {
-		System.out.println("need to enter");
+	public void enters_data_in_the_volatile_matter_percentage_field() throws InterruptedException {
+		createlisting.enterdataintoinputfield("Volatile Matter Percentage", "25");
 	}
+
 	@When("selects Max from the Volatile Matter MIN\\/MAX dropdown")
 	public void selects_max_from_the_volatile_matter_min_max_dropdown() throws InterruptedException {
 		createlisting.selectDropdownOption("Volatile Matter MIN/MAX", "MAX");
 	}
 	@When("enters data in the Total Moisture Percentage field")
-	public void enters_data_in_the_total_moisture_percentage_field() {
-		System.out.println("need to enter");
+	public void enters_data_in_the_total_moisture_percentage_field() throws InterruptedException {
+		createlisting.enterdataintoinputfield("Total Moisture Percentage", "25");
 	}
 	@When("selects Max from the Total Moisture MIN\\/MAX dropdown")
 	public void selects_max_from_the_total_moisture_min_max_dropdown() throws InterruptedException {
@@ -90,40 +91,44 @@ public class createlistingStep extends BasicClass {
 	public void the_user_selects_delivery_mode() throws InterruptedException {
 		createlisting.selectDropdownOption("Delivery mode", "Rail");
 	}
+	@And("the user enters Railway siding code")
+	public void the_user_enters_Railway_siding_code() throws InterruptedException {
+		createlisting.enterdataintoinputfield("Railway siding code", "RailCodeTest 123");
+	}
+	
 	@When("the user enters Quantity in MT")
-	public void the_user_enters_quantity_in_mt() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	public void the_user_enters_quantity_in_mt() throws InterruptedException {
+		createlisting.enterdataintoinputfield("Quantity (MT)", "15000");
 	}
 	@When("the user enters Rate per MT in INR")
-	public void the_user_enters_rate_per_mt_in_inr() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	public void the_user_enters_rate_per_mt_in_inr() throws InterruptedException {
+		createlisting.enterdataintoinputfield("Rate per MT (INR)", "1500");
 	}
 	@When("the user selects Delivery Terms")
-	public void the_user_selects_delivery_terms() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	public void the_user_selects_delivery_terms() throws InterruptedException {
+	    createlisting.selectDropdownOption("Delivery terms", "FOB");
 	}
 	@When("the user selects Payment Terms")
-	public void the_user_selects_payment_terms() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	public void the_user_selects_payment_terms() throws InterruptedException {
+	   createlisting.selectDropdownOption("Payment terms", "Letter of Credit");
 	}
+	
+	@And("the user enters credit days")
+	public void the_user_enters_credit_days() throws InterruptedException {
+		createlisting.enterdataintoinputfield("Credit Days","32");
+	}
+	
 	@When("the user enters EMD%")
-	public void the_user_enters_emd() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	public void the_user_enters_emd() throws InterruptedException {
+		createlisting.enterdataintoinputfield("EMD%", "54");
 	}
 	@When("the user enters Free Payment Period in days")
-	public void the_user_enters_free_payment_period_in_days() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	public void the_user_enters_free_payment_period_in_days() throws InterruptedException {
+		createlisting.enterdataintoinputfield("Free Payment Period (Days)", "3");
 	}
 	@When("the user enters Free Lifting Period in days")
-	public void the_user_enters_free_lifting_period_in_days() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	public void the_user_enters_free_lifting_period_in_days() throws InterruptedException {
+		createlisting.selectDropdownOption("Free Lifting Period (Days)", "3");
 	}
 	@When("the user selects Validity Start Date")
 	public void the_user_selects_validity_start_date() {
