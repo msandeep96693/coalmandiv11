@@ -20,13 +20,13 @@ And the user selects CIL Subsidiary
 And the user selects a valid Mine
 
 When the user enters data in the Fixed Carbon Percentage field
-And selects Max from the Fixed Carbon MIN/MAX dropdown
+And selects Max from the Fixed Carbon MINMAX dropdown
 And enters data in the Ash Content Percentage field
-And selects Max from the Ash Content MIN/MAX dropdown
+And selects Max from the Ash Content MINMAX dropdown
 And enters data in the Volatile Matter Percentage field
-And selects Max from the Volatile Matter MIN/MAX dropdown
+And selects Max from the Volatile Matter MINMAX dropdown
 And enters data in the Total Moisture Percentage field
-And selects Max from the Total Moisture MIN/MAX dropdown
+And selects Max from the Total Moisture MINMAX dropdown
 
 And the user selects Delivery Mode
 And the user enters Railway siding code
@@ -36,6 +36,7 @@ And the user selects Delivery Terms
 And the user selects Payment Terms
 And the user enters credit days
 And the user enters EMD%
+
 And the user enters Free Payment Period in days
 And the user enters Free Lifting Period in days
 And the user selects Validity Start Date

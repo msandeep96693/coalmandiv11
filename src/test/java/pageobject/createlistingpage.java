@@ -40,6 +40,18 @@ public class createlistingpage extends Basicpage {
 	@FindBy(xpath = "//div[@class='ant-form-item-control-input-content']/input")
 	private List<WebElement> Allinputfield;
 	
+	@FindBy(xpath = "(//input[@type='number'])[1]")
+	private WebElement fixedcarbonfield;
+	
+	@FindBy(xpath = "(//input[@type='number'])[2]")
+	private WebElement fixedashfield;
+	
+	@FindBy(xpath = "(//input[@type='number'])[3]")
+	private WebElement volatilematterpercentagefield;
+	
+	@FindBy(xpath = "(//input[@type='number'])[4]")
+	private WebElement moisturepercentagefield;
+	
 	// fixed carbon, moisture and etc field address and EMD%, credit days
 	@FindBy(xpath = "//input[@type='number']") 
 	private List<WebElement> coalspecificationinputfield;
@@ -241,73 +253,91 @@ public class createlistingpage extends Basicpage {
 
 	
 	
-	 public void enterdataintoinputfield(String labelName, String inputdata) throws InterruptedException
-	 {
-		 for (int i = 0; i < fetchallthelabelname.size(); i++) 
-	     {
-	         String currentLabel = fetchallthelabelname.get(i).getText().trim();
-	         System.out.println("Fetch label name :- "+currentLabel);
-
-	         switch (currentLabel)
-	         {
-	             
-	             	case "Business Profile":
-	                case "Coal Type":
-	                case "Origin of Coal":
-	                case "Source of Coal":
-	                case "Grade":
-	                case "CIL Subsidiary":
-	                case "Mine":
-	                case "Fixed Carbon Percentage":
-	                case "Fixed Carbon MIN/MAX":
-	                case "Ash Content Percentage":
-	                case "Ash Content MIN/MAX":
-	                case "Volatile Matter Percentage":
-	                case "Volatile Matter MIN/MAX":
-	                case "Total Moisture Percentage":
-	                case "Total Moisture MIN/MAX":
-	                case "Delivery mode":
-	                case "Railway siding code":
-	                case "Quantity (MT)":
-	                case "Rate per MT (INR)":
-	                case "Delivery terms":
-	                case "Payment terms":
-	                case "Credit Days":
-	                case "EMD%":
-	                case "Free Payment Period (Days)":
-	                case "Free Lifting Period (Days)":
-	                case "Validity Start Date":
-	                case "Validity End Date":
-	                case "Loading Point Address":
-	            	 
-	            
-	            	 if (currentLabel.equalsIgnoreCase(labelName)) 
-	                 {
-	            		 Actions action=new Actions(driver);
-	            		 action.doubleClick(fetchallthelabelname.get(i));
-	            		 action.sendKeys(Keys.TAB);
-	            		 action.sendKeys("Rajanna").perform();
-	                 	
+//	 public void enterdataintoinputfield(String labelName, String inputdata) throws InterruptedException
+//	 {
+//		 
+//		 for (int i = 0; i < fetchallthelabelname.size(); i++) 
+//	     {
+//	         String currentLabel = fetchallthelabelname.get(i).getText().trim();
+//	         System.out.println("Fetch label name :- "+currentLabel);
+//
+//	         switch (currentLabel)
+//	         {
+//	             
+//	             	case "Business Profile":
+//	                case "Coal Type":
+//	                case "Origin of Coal":
+//	                case "Source of Coal":
+//	                case "Grade":
+//	                case "CIL Subsidiary":
+//	                case "Mine":
+//	                case "Fixed Carbon Percentage":
+//	                case "Fixed Carbon MIN/MAX":
+//	                case "Ash Content Percentage":
+//	                case "Ash Content MIN/MAX":
+//	                case "Volatile Matter Percentage":
+//	                case "Volatile Matter MIN/MAX":
+//	                case "Total Moisture Percentage":
+//	                case "Total Moisture MIN/MAX":
+//	                case "Delivery mode":
+//	                case "Railway siding code":
+//	                case "Quantity (MT)":
+//	                case "Rate per MT (INR)":
+//	                case "Delivery terms":
+//	                case "Payment terms":
+//	                case "Credit Days":
+//	                case "EMD%":
+//	                case "Free Payment Period (Days)":
+//	                case "Free Lifting Period (Days)":
+//	                case "Validity Start Date":
+//	                case "Validity End Date":
+//	                case "Loading Point Address":
+//	            	 
+//	            
+//	            	 if (currentLabel.equalsIgnoreCase(labelName)) 
+//	                 {
+////	            		 Actions action=new Actions(driver);
+////	            		 action.doubleClick(fetchallthelabelname.get(i));
+////	            		 action.sendKeys(Keys.TAB);
+////	            		 action.sendKeys("Rajanna").perform();
+//	                 	
 //	                 	Thread.sleep(3000);
 //	                 	System.out.println(Allinputfield.size());  
-//	                 	 System.out.println("first count :- "+Allinputfield.get(i));
-//	                 	Allinputfield.get(i).sendKeys(inputdata);
+//	                 	 System.out.println("first count :- "+coalspecificationinputfield.get(i));
+//	                 	coalspecificationinputfield.get(i).sendKeys(inputdata);
 ////	                     Thread.sleep(1000);
 //	                    
 //	                     System.out.println("verify label name 2 :- "+ currentLabel);
-//	                     return;
-	                 } 
-	            	 break;
-			default:
-	                    // For labels not handled in switch
-	                    break;
-	
-	                    
-	         }
-	     }
+////	                     return;
+//	                 } 
+//	            	 break;
+//			default:
+//	                    // For labels not handled in switch
+//	                    break;
+//	
+//	                    
+//	         }
+//	     }
+//	 }
+	 
+	 
+	 public void enterfixedcarboninputfield(String inputdata)
+	 {
+		 waitforElement(fixedcarbonfield);
+		 fixedcarbonfield.sendKeys(inputdata);
 	 }
 	 
+	 public void enterfixedashcontentinputfield(String inputdata)
+	 {
+		 waitforElement(fixedashfield);
+		 fixedashfield.sendKeys(inputdata);
+	 }
 	 
+	 public void entervolatilematterpercentage(String inputdata)
+	 {
+		 waitforElement(volatilematterpercentagefield);
+		 volatilematterpercentagefield.sendKeys(inputdata);
+	 }
 	 
 }
 
